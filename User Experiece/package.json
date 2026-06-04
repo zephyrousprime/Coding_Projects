@@ -1,0 +1,30 @@
+{
+  "name": "world-hunger-website",
+  "version": "1.0.0",
+  "description": "Interactive website about world hunger with comprehensive testing",
+  "main": "Code/css and java script/script.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "serve": "python -m http.server 8000",
+    "lint": "eslint \"Code/**/*.js\""
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "eslint": "^8.55.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "Code/**/*.js",
+      "!**/node_modules/**"
+    ]
+  }
+}

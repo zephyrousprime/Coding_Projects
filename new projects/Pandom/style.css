@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Protest+Riot:regular);
+@import url(https://fonts.googleapis.com/css?family=Protest+Strike:regular);
+@import url(https://fonts.googleapis.com/css?family=Protest+Guerrilla:regular);
+@import url(https://fonts.googleapis.com/css?family=Protest+Revolution:regular);
+@font-face {
+    font-family: 'rocks';
+    src: url('rocks.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'soft';
+    src: url('soft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --soft-font: 'soft', sans-serif;
+    --strong-font: 'rocks', 'soft', sans-serif;
+    --Block-font: 'Protest Riot', sans-serif;
+    --Strike-font: 'Protest Strike', sans-serif;
+    --Guerrilla-font: 'Protest Guerrilla', sans-serif;
+    --Revolution-font: 'Protest Revolution', sans-serif;
+}
+
+canvas{
+    border: 1px solid black;
+}

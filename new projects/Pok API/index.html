@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-glow page-glow-left" aria-hidden="true"></div>
+    <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+    <main class="app-shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Live data from PokeAPI</p>
+                <h1>Pokedex Pulse</h1>
+                <p class="hero-text">
+                    Search any Pokemon by name or number, pull a random encounter, and browse the
+                    latest page of the national dex in a bold, game-inspired layout.
+                </p>
+
+                <form class="search-panel" id="search-form">
+                    <label class="search-label" for="pokemon-search">Find a Pokemon</label>
+                    <div class="search-row">
+                        <input
+                            id="pokemon-search"
+                            name="pokemon"
+                            type="text"
+                            placeholder="Try pikachu or 25"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button type="submit" class="primary-button">Search</button>
+                        <button type="button" class="ghost-button" id="random-button">Random</button>
+                    </div>
+                    <p class="status-message" id="status-message" aria-live="polite">
+                        Loading the first page of Pokemon...
+                    </p>
+                </form>
+            </div>
+
+            <aside class="hero-badge">
+                <p class="badge-label">Current view</p>
+                <p class="badge-value" id="range-label">1 - 12</p>
+                <p class="badge-subtitle" id="count-label">of 0 Pokemon</p>
+            </aside>
+        </section>
+
+        <section class="content-grid">
+            <article class="feature-card" id="feature-card">
+                <div class="feature-media">
+                    <div class="feature-ball" aria-hidden="true"></div>
+                    <img
+                        id="feature-image"
+                        class="feature-image"
+                        src=""
+                        alt=""
+                    >
+                </div>
+
+                <div class="feature-details">
+                    <div class="title-row">
+                        <div>
+                            <p class="panel-label">Spotlight</p>
+                            <h2 id="feature-name">Loading...</h2>
+                        </div>
+                        <button type="button" class="ghost-button compact-button" id="sprite-toggle">
+                            Show Shiny
+                        </button>
+                    </div>
+
+                    <div class="meta-row">
+                        <span class="dex-id" id="feature-id">#000</span>
+                        <div class="type-row" id="feature-types"></div>
+                    </div>
+
+                    <p class="flavor-text" id="feature-flavor">
+                        Fetching Pokemon data...
+                    </p>
+
+                    <div class="quick-stats" id="feature-stats-summary"></div>
+
+                    <div class="info-columns">
+                        <div class="info-block">
+                            <p class="panel-label">Abilities</p>
+                            <ul class="tag-list" id="feature-abilities"></ul>
+                        </div>
+
+                        <div class="info-block">
+                            <p class="panel-label">Base Stats</p>
+                            <div class="stat-list" id="feature-stat-bars"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <section class="list-card">
+                <div class="list-header">
+                    <div>
+                        <p class="panel-label">Dex Browser</p>
+                        <h2>Browse the roster</h2>
+                    </div>
+
+                    <div class="pager">
+                        <button type="button" class="ghost-button compact-button" id="prev-button">Previous</button>
+                        <button type="button" class="ghost-button compact-button" id="next-button">Next</button>
+                    </div>
+                </div>
+
+                <div class="pokemon-grid" id="pokemon-grid" aria-live="polite"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

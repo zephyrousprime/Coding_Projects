@@ -1,0 +1,45 @@
+
+        graph LR
+%%{init: {'flowchart': {'nodeSpacing': 24, 'rankSpacing': 24, 'curve': 'linear'}}}%%
+
+        H@{shape: hex, label: <a href="Home.html"><img class="nav-icon" src="../icons/home.svg" alt="" width="24" height="24">Home</a>}
+        F@{ shape: docs, label: "<a href="Form.html"><img class="nav-icon" src="../icons/form.svg" alt="" width="24" height="24">Form / Input</a>" }
+        S@{shape: stadium, label: <a href="Stats.html"><img class="nav-icon" src="../icons/stats.svg" alt="" width="24" height="24">Data Viewer</a>}
+        D[(fa:fa-spinner <a href="https://digisolutions.wcc.qld.edu.au/phpmyadmin/index.php?route=%2Ftable%2Fstructure&db=wcc_106282&table=Class_Numbers" target="_blank">Data</a>)];
+
+            
+        subgraph Data
+            c(class);
+            c@{shape: lin-cyl, label: class};
+            y@{shape: lin-cyl, label: year_level};
+            s@{shape: lin-cyl, label: size};
+            l@{shape: lin-cyl, label: lowest_grade};
+            a@{shape: lin-cyl, label: av_grade};
+            h@{shape: lin-cyl, label: highest_grade};
+            D e4@<===> c 
+            D e5@<===> y 
+            D e6@<===> s 
+            D e7@<===> l 
+            D e8@<===> a 
+            D e9@<===> h
+        end
+        H e0@<--> F & S
+        F e3@--> S
+        F e2@-->|Submits Data| D
+        D e1@--->|Reads Data| S 
+        
+        e0@{  curve: linear}
+        e1@{  curve: linear}
+        e2@{  curve: linear}
+        e3@{  curve: linear}
+        e4@{  curve: linear}
+        e5@{  curve: linear}
+        e6@{  curve: linear}
+        e7@{  curve: linear}
+        e8@{  curve: linear}
+        e9@{  curve: linear}
+        classDef smallNode font-size: 14px, padding: 0px, stroke-width: 2px;
+        class c,y,s,l,a,h smallNode;
+
+        classDef animate stroke-dasharray: 9,5,stroke-dashoffset: 900,animation: dash 25s linear infinite;
+        class e1,e2 animate

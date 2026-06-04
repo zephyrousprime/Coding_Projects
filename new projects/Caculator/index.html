@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="Calculator">
+        <!--for the display I have used an input tag with a element of readonly so it can't be chage by the user -->
+        <input id="display" readonly>
+        <section class="simple" id="simple_key">
+            <div class="keys">
+                <!-- when Calculator Buttons get clicked run the function of append to dispaly with the input of the symbol. -->
+                <button onclick="appendtodisplay('+')" class="operator-btn" class="keys-2">+</button>
+                <button onclick="appendtodisplay('7')" class="keys-2">7</button>
+                <button onclick="appendtodisplay('8')" class="keys-2">8</button>
+                <button onclick="appendtodisplay('9')" class="keys-2">9</button>
+                <button onclick="appendtodisplay('-')" class="operator-btn" class="keys-2">-</button>
+                <button onclick="appendtodisplay('4')" class="keys-2">4</button>
+                <button onclick="appendtodisplay('5')" class="keys-2">5</button>
+                <button onclick="appendtodisplay('6')" class="keys-2">6</button>
+                <button onclick="appendtodisplay('*')" class="operator-btn" class="keys-2">*</button>
+                <button onclick="appendtodisplay('1')" class="keys-2">1</button>
+                <button onclick="appendtodisplay('2')" class="keys-2">2</button>
+                <button onclick="appendtodisplay('3')" class="keys-2">3</button>
+                <button onclick="appendtodisplay('/')" class="operator-btn" class="keys-2">/</button>
+                <button onclick="appendtodisplay('0')" class="keys-2">0</button>
+                <button onclick="appendtodisplay('.')" class="keys-2">.</button>
+                <button onclick="calculate()" class="keys-2">=</button>    
+                <button onclick="clearDisplay()" class="operator-btn" class="keys-2">C</button>
+            </div>
+        </section>
+    </div>
+    <!---this links to the javascript-->
+    <script src="script.js"></script>
+</body>
+</html>

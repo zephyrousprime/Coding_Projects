@@ -1,0 +1,63 @@
+/* General styling */
+body {
+    font-family: "Garamond", serif; /* Royal-looking font */
+    background-color: hsl(270, 50%, 20%); /* Dark royal purple background */
+    color: hsl(270, 50%, 90%); /* Light text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: hsl(270, 60%, 80%); /* Slightly brighter royal purple */
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    background-color: hsl(270, 50%, 25%); /* Slightly lighter purple for form */
+    border: 2px solid hsl(270, 50%, 40%); /* Border with a royal purple tone */
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px hsl(270, 50%, 10%); /* Subtle shadow for depth */
+}
+
+input, select, button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid hsl(270, 50%, 40%);
+    border-radius: 5px;
+    background-color: hsl(270, 50%, 30%);
+    color: hsl(270, 50%, 90%);
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: hsl(270, 50%, 70%);
+}
+
+button {
+    background-color: hsl(270, 50%, 40%);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: hsl(270, 50%, 50%);
+}
+
+/* Styling for radio buttons */
+input[type="radio"] {
+    display: inline;
+    margin: 0 5px;
+}
+
+/* Additional styling for alignment */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: hsl(270, 50%, 80%);
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&family=Protest+Strike&family=Protest+Guerrilla&family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="../SVG's/RPS.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="../../CSS/style.css" />
+	<title>Quantum RPS</title>
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="../index.html"><i class="fas fa-brain"></i>The Nexus Hub</a>
+			<nav class="main-nav">
+				<a href="number.html"><i class="fas fa-compass"></i> Angle Guesser</a>
+				<a href="hangman.html"><i class="fas fa-puzzle-piece"></i> Fractal Hangman</a>
+				<a href="tictactoe.html"><i class="fas fa-th"></i> Atomic Tic Tac Toe</a>
+				<a href="../P5 Canvas/p5.html"><i class="fas fa-palette"></i> Cosmic Canvas</a>
+				<a href="../P5 Canvas/p5_solor.html"><i class="fas fa-sun"></i> Nebula System</a>
+				<a href="../P5 Canvas/p5_torus.html"><i class="fas fa-ring"></i> Void Torus</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="game" id="rps-game">
+			<h1>Quantum RPS<h5>Best of 5</h5></h1>
+			
+			<h4>Choose your quantum element:</h4>
+			<div class="controls" id="rps-controls">
+				<button data-choice="Atom">Atom</button>
+				<button data-choice="Void">Void</button>
+				<button data-choice="Fractal">Fractal</button>
+				<button data-choice="Quantum">Quantum</button>
+				<button data-choice="Singularity">Singularity</button>
+				<button id="rps-reset" class="secondary">Reset</button>
+			</div>
+			<div  id="rps-table">
+				<table class="table" onclick="console.log(this.id)"">
+					<tr>
+						<th>If you chose:</th>
+						<th>You will win against:</th>
+						<th>You will lose against:</th>
+					</tr>
+					<tr>
+						<td>Atom</td>
+						<td>Void, Quantum</td>
+						<td>Fractal, Singularity</td>
+					</tr>
+					<tr>
+						<td>Void</td>
+						<td>Fractal, Singularity</td>
+						<td>Atom, Quantum</td>
+					</tr>
+					<tr>
+						<td>Fractal</td>
+						<td>Atom, Quantum</td>
+						<td>Void, Singularity</td>
+					</tr>
+					<tr>
+						<td>Quantum</td>
+						<td>Void, Singularity</td>
+						<td>Atom, Fractal</td>
+					</tr>
+					<tr>
+						<td>Singularity</td>
+						<td>Atom, Fractal</td>
+						<td>Void, Quantum</td>
+					</tr>
+				</table>
+			</div>
+			<div id="rps-feedback" class="feedback"><em>Choose your quantum element</em></div>
+			<div class="scoreboard">
+				<div><b> You: <span id="rps-player-score"></span></b></div>
+				<div><b> Quantum Computer: <span id="rps-computer-score"></span></b></div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer"><div class="container">©The Nexus Hub </div></footer>
+
+	<script src="JS/rps.js"></script>
+	<script src="../script.js"></script>
+</body>
+</html>

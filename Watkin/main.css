@@ -1,0 +1,30 @@
+html{
+    margin: 0%;
+    padding: 0%;
+    background-color: #000000
+}
+.info{
+    display: none;
+    margin-top: 10px;
+    background: #6d0302;
+    color:#9801b3;
+    padding: 16px;
+    border-radius: 8px;
+}
+.show{
+    display: block;
+}
+.toggle-link{
+    color: #fff;
+    background: #9801b3;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 40px;
+
+}
+.toggle-link:hover{
+    background: #7a0070;
+}

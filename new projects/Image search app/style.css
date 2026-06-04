@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+  --main-bg-color: hsl(247, 71%, 51%);
+  --main-text-color: hsl(0, 0%, 100%);
+  --accent-color: hsl(238, 39%, 53%);
+  --accent-color-hover: hsl(238, 34%, 17%);
+  --font-family: 'Playfair Display', serif;
+}
+* {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+} 
+body {
+    background: var(--main-bg-color);
+    line-height: 1.6;
+}
+h1{
+  font-size: 36px;
+  font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+#search-input{
+    width: 60%;
+    max-width: 600px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+    border-radius: 5px ;
+    font-size: 18px;
+    color: var(--main-text-color);
+}
+#search-button{
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--main-text-color);
+    font-size: 18px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+#search-button:hover{
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.4);
+}

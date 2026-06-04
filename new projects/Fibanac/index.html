@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diagrammatic fibonacci</title>
+</head>
+<body>
+    <h1>Fibonacci</h1>
+    <section class="Display" id="Display">
+        <div class="Display_fibonacci" id="Display_fibonacci">
+           <h1>Nummbers Of Fibonacci</h1> 
+           <button id="start" class="Inputs">Start</button>
+           <button id="restart" class="Inputs">Restart</button>
+
+           <label for="sequens">Sequence Digit:</label>
+           <h2 class="sequens" id="sequens">1</h2>
+
+           <label for="fibonacci_number"><br>Fibonacci Number:</label>
+           <h2 class="fibonacci_number" id="fibonacci_number">1</h2>
+           
+           <label for="exponential_number"><br>Exponential Number:</label>
+           <h2 class="fibonacci_number" id="exponential_number">1</h2>
+
+           <h2 id="math_fib">1.00000</h2>
+        </div>
+        <div class="Display_graph" id="Display_graph">
+            <h1>Diagrams</h1>
+            <div class="chat">
+                <canvas id="fibonacciCanvas"></canvas>
+            </div>
+
+            <div class="chat">
+                <canvas id="exponentialCanvas"></canvas>
+            </div>
+
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

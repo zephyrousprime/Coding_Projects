@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Protest+Strike:regular);
+@font-face {
+    font-family: 'rocks';
+    src: url('rocks.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --primary-color: hsl(349, 57%, 85%);
+    --secondary-color: hsl(349, 57%, 65%);
+    --font-Pron: 'Protest Strike', cursive;
+    --font-rocks: 'rocks', cursive;
+}
+*{
+    font-family: var(--font-Pron, cursive); 
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: hsl(349, 57%, 60%);
+}
+h1{
+    font-family: var(--font-rocks, cursive);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 20px;
+}
+input{
+    margin-left: 20%;
+    padding-right: 20%;
+    width: 100px;
+    height: 30%;
+    border-radius: 10%;
+    background-color: var(--secondary-color);
+
+}
+div, p{
+    color: var(--secondary-color);
+    padding-left: 15%;
+    text-align: center;
+}
+p{
+    margin-left: 15%;
+}
+button{
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
