@@ -38,14 +38,7 @@ export default class ReactiveData extends Module{
 		this.unwatchData();
 		
 		this.data = data;
-
-		//hold a reference to the instance methods so they can be restored in unwatchData.
-		//note: the actual array mutation below is performed via the native Array.prototype
-		//methods rather than these captured references. On framework reactive arrays (e.g.
-		//Vue 3) reading data.push returns an instrumented method that re-dispatches through
-		//this overridden property, which - while reactivity is blocked - would silently drop
-		//the underlying mutation and leave the array out of sync with the table (issue #4212).
-
+		
 		//override array push function
 		this.origFuncs.push = data.push;
 		
@@ -63,8 +56,8 @@ export default class ReactiveData extends Module{
 						self.table.rowManager.addRowActual(arg, false);
 					});
 					
-					result = Array.prototype.push.apply(data, arguments);
-
+					result = self.origFuncs.push.apply(data, arguments);
+					
 					self.unblock("data-push");
 				}
 				
@@ -89,8 +82,8 @@ export default class ReactiveData extends Module{
 						self.table.rowManager.addRowActual(arg, true);
 					});
 					
-					result = Array.prototype.unshift.apply(data, arguments);
-
+					result = self.origFuncs.unshift.apply(data, arguments);
+					
 					self.unblock("data-unshift");
 				}
 				
@@ -119,7 +112,7 @@ export default class ReactiveData extends Module{
 						}
 					}
 
-					result = Array.prototype.shift.call(data);
+					result = self.origFuncs.shift.call(data);
 
 					self.unblock("data-shift");
 				}
@@ -148,8 +141,8 @@ export default class ReactiveData extends Module{
 						}
 					}
 
-					result = Array.prototype.pop.call(data);
-
+					result = self.origFuncs.pop.call(data);
+					
 					self.unblock("data-pop");
 				}
 
@@ -207,8 +200,8 @@ export default class ReactiveData extends Module{
 						self.table.rowManager.reRenderInPosition();
 					}
 
-					result = Array.prototype.splice.apply(data, arguments);
-
+					result = self.origFuncs.splice.apply(data, arguments);
+					
 					self.unblock("data-splice");
 				}
 				
@@ -244,108 +237,102 @@ export default class ReactiveData extends Module{
 	
 	watchTreeChildren (row){
 		var self = this,
-		childField = row.getData()[this.table.options.dataTreeChildField];
-
-		//note: the actual array mutation below is performed via the native Array.prototype
-		//methods. Reading childField.push on a framework reactive array (e.g. Vue 3) returns
-		//an instrumented method that re-dispatches through this overridden property; while
-		//reactivity is blocked that would silently drop the mutation and desync the child
-		//array from the table (issue #4212). Regular functions (not arrows) are required so
-		//that `arguments` refers to the call's arguments rather than watchTreeChildren's.
-
+		childField = row.getData()[this.table.options.dataTreeChildField],
+		origFuncs = {};
+		
 		if(childField){
-
+			
+			origFuncs.push = childField.push;
+			
 			Object.defineProperty(childField, "push", {
 				enumerable: false,
 				configurable: true,
-				value: function(){
-					var result;
-
+				value: () => {
 					if(!self.blocked){
 						self.block("tree-push");
-
-						result = Array.prototype.push.apply(childField, arguments);
-						self.rebuildTree(row);
-
+						
+						var result = origFuncs.push.apply(childField, arguments);
+						this.rebuildTree(row);
+						
 						self.unblock("tree-push");
 					}
-
+					
 					return result;
 				}
 			});
-
+			
+			origFuncs.unshift = childField.unshift;
+			
 			Object.defineProperty(childField, "unshift", {
 				enumerable: false,
 				configurable: true,
-				value: function(){
-					var result;
-
+				value: () => {
 					if(!self.blocked){
 						self.block("tree-unshift");
-
-						result = Array.prototype.unshift.apply(childField, arguments);
-						self.rebuildTree(row);
-
+						
+						var result =  origFuncs.unshift.apply(childField, arguments);
+						this.rebuildTree(row);
+						
 						self.unblock("tree-unshift");
 					}
-
+					
 					return result;
 				}
 			});
-
+			
+			origFuncs.shift = childField.shift;
+			
 			Object.defineProperty(childField, "shift", {
 				enumerable: false,
 				configurable: true,
-				value: function(){
-					var result;
-
+				value: () => {
 					if(!self.blocked){
 						self.block("tree-shift");
-
-						result = Array.prototype.shift.call(childField);
-						self.rebuildTree(row);
-
+						
+						var result =  origFuncs.shift.call(childField);
+						this.rebuildTree(row);
+						
 						self.unblock("tree-shift");
 					}
-
+					
 					return result;
 				}
 			});
-
+			
+			origFuncs.pop = childField.pop;
+			
 			Object.defineProperty(childField, "pop", {
 				enumerable: false,
 				configurable: true,
-				value: function(){
-					var result;
-
+				value: () => {
 					if(!self.blocked){
 						self.block("tree-pop");
-
-						result = Array.prototype.pop.call(childField);
-						self.rebuildTree(row);
-
+						
+						var result =  origFuncs.pop.call(childField);
+						this.rebuildTree(row);
+						
 						self.unblock("tree-pop");
 					}
-
+					
 					return result;
 				}
 			});
-
+			
+			origFuncs.splice = childField.splice;
+			
 			Object.defineProperty(childField, "splice", {
 				enumerable: false,
 				configurable: true,
-				value: function(){
-					var result;
-
+				value: () => {
 					if(!self.blocked){
 						self.block("tree-splice");
-
-						result = Array.prototype.splice.apply(childField, arguments);
-						self.rebuildTree(row);
-
+						
+						var result =  origFuncs.splice.apply(childField, arguments);
+						this.rebuildTree(row);
+						
 						self.unblock("tree-splice");
 					}
-
+					
 					return result;
 				}
 			});
