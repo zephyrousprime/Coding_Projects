@@ -1,17 +1,34 @@
 ## Guide to the Libarys
 #### tabulator-master
-    - link 
+    - https://tabulator.info/docs/6.4
+    - Link 
         - local
         <script src="../../00_Libarys\tabulator-master\dist\js\tabulator.min.js"></script>
         <link rel="stylesheet" href="../../00_Libarys\tabulator-master\dist\css\tabulator.min.css">
-        - online
+        - online/ CDN
         <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
         <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
         - redowload
         https://github.com/olifolkerd/tabulator/releases
-    - code
-        - normle
-
+    - Code
+        - basic
+        
+            ```JS
+            new Tabulator("#example-table", {
+            layout:"fitColumns",
+            data:[
+                {id:1, name:"John", age:20},
+                {id:2, name:"Sarah", age:18},
+                {id:3, name:"Mike", age:22},
+            ],
+            columns:[
+                {title:"ID", field:"id"},
+                {title:"Name", field:"name"},
+                {title:"Age", field:"age"},
+            ],
+            });
+            
+            ```
         - var link
             var tabledata = [
             {id:1, name:"Oli Bob", progress:12, gender:"male", rating:1, col:"red", dob:"19/02/1984", car:1},
@@ -45,4 +62,26 @@
                 data: [],
                 autoColumns: true,
             });
-#### next one
+#### anime-master
+    - https://animejs.com/documentation/getting-started/installation/
+    - Link
+        - local
+            import { animate } from '../../00_Libarys/anime-master/dist/bundles/anime.esm.min.js';
+        - online/ CDN
+            <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+        - redowlad 
+            https://github.com/juliangarnier/anime/tree/master
+    - Code
+        - basic
+            <div id="box" style="background:#3498db; width:50px; height:50px;"></div>
+            <script>
+            anime({
+                targets: '#box',
+                translateX: 250,
+                scale: 1.5,
+                duration: 2000,
+                easing: 'easeInOutQuad',
+                direction: 'alternate',
+                loop: true
+            });
+            </script>

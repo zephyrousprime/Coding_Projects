@@ -1,0 +1,279 @@
+{
+  "main": {
+    "id": "1b533899f97dcc47",
+    "type": "split",
+    "children": [
+      {
+        "id": "295245784bd11942",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fa1a22e0cf9d6ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Libarys/Libary-Master.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Libary-Master"
+            }
+          },
+          {
+            "id": "7374904506449b72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_new projects/Project-Master.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Project-Master"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5fb8b87b940e4776",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c33d481f7ca6cc0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d22261a3a2c97a90",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "69635f71f7ba80d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "649ae7584a89c55c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 221.5
+  },
+  "right": {
+    "id": "8f5988692490403e",
+    "type": "split",
+    "children": [
+      {
+        "id": "7192ab92a5c41b8c",
+        "type": "tabs",
+        "dimension": 72.18992248062015,
+        "children": [
+          {
+            "id": "abe124b5ac62ea0f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Excalidraw/Pokemon.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pokemon"
+            }
+          },
+          {
+            "id": "5fb521559185b0b4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "No Name Yet.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from No Name Yet"
+            }
+          },
+          {
+            "id": "96998d2e1a44dddb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "17c505d14028545a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "5 - Geo/Geo Rabbit Report.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Geo Rabbit Report"
+            }
+          }
+        ]
+      },
+      {
+        "id": "66b478882947f59e",
+        "type": "tabs",
+        "dimension": 27.810077519379846,
+        "children": [
+          {
+            "id": "b8c5dd1116c91681",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "9fa1a22e0cf9d6ea",
+  "lastOpenFiles": [
+    "MaterMD.md",
+    "01_new projects/Project-Master.md",
+    "5 - Geo/Dam.md",
+    "1 - Science/Revision.md",
+    "Excalidraw/WhiteBoard.md",
+    "2 - TI/SQL/Coding.docx",
+    "I don't know now.md",
+    "Reminders/To-Do list.md",
+    "Reminders/Attachments/Pasted image 20260604140427.png",
+    "Reminders/Attachments",
+    "README.md",
+    "2 - TI/SQL/SQL_Assiment.md",
+    "Excalidraw/Attachments/Pasted Image 20260531060120_201.png",
+    "Excalidraw/Attachments/Pasted Image 20260531055921_711.png",
+    "Excalidraw/Attachments/Pasted Image 20260531055720_317.png",
+    "Excalidraw/Attachments/Pasted Image 20260531055707_787.png",
+    "Improvements.md",
+    "5 - Geo/Question.md",
+    "main.ts",
+    "esbuild.config.mjs",
+    "tsconfig.json",
+    "package.json",
+    "manifest.json",
+    "5 - Geo/Rabbits asiment/CSIRO_Rabbit-Biocontrol_2017.md",
+    "5 - Geo/Rabbits asiment/Rabbits.md",
+    "5 - Geo/Rabbits asiment",
+    "2 - TI/SQL/Coding.md",
+    "test.md",
+    "No Name Yet.md",
+    "dd.md",
+    "bb.md",
+    "5 - Geo/Rabbits asiment/sear.unisq.edu.au.md",
+    "5 - Geo/Rabbits-ThinkBen.md",
+    "1 - Science/Chapter 7/Chapter 7 Motion and Energy.md",
+    "1 - Science/Chapter 7/Chapter 7.5.md",
+    "1 - Science/S-Chapters Overview.md",
+    "6 - Bib/Year 10 Biblical Studies Term 2 Presentation - Application - Task Sheet.pdf",
+    "5 - Geo/Rabbits asiment/Geo Rabbit Report.md",
+    "5 - Geo/Rabbits asiment/Word Rabbits.md",
+    "Excalidraw/Attachments/Pasted Image 20260525110800_272.png",
+    "Excalidraw/Attachments/Pasted Image 20260525110753_984.png",
+    "Excalidraw/Attachments/Pasted Image 20260525110749_660.png",
+    "Excalidraw/Attachments/Pasted Image 20260525110743_712.png",
+    "Excalidraw/Drawing 2026-05-19 13.47.51.excalidraw.md",
+    "Excalidraw/Attachments",
+    "2 - TI/SQL/Attachments/Pasted image 20260517161406.png",
+    "Untitled.canvas"
+  ]
+}
