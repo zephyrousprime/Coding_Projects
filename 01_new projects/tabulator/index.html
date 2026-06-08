@@ -3,14 +3,30 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+     <link rel="stylesheet" href="../../00_Libarys\tabulator-master\dist\css\tabulator.min.css">
+
     <title>Document</title>
 </head>
 <body>
     <h1 class="title">ho</h1>
-    <div id="example-table"></div>
-    <script type="text/javascript" src="dist/js/tabulator.min.js"></script>
-    <script type="text/javascript" src="dist/js/jquery_wrapper.min.js"></script>
-    <script type="module" src="script.js"></script>
+    <div id="example-table"></div> 
+    <script src="../../00_Libarys\tabulator-master\dist\js\tabulator.min.js"></script>
+    <script>
+        new Tabulator("#example-table", {
+            layout:"fitColumns",
+            data:[
+                {id:1, name:"John", age:20},
+                {id:2, name:"Sarah", age:18},
+                {id:3, name:"Mike", age:22},
+            ],
+            columns:[
+                {title:"ID", field:"id"},
+                {title:"Name", field:"name"},
+                {title:"Age", field:"age"},
+            ],
+        });
+    </script> 
+    <!--<script type="module" src="script.js"></script>-->
 </body>
 </html>

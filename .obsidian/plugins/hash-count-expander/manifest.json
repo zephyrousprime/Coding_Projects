@@ -1,0 +1,10 @@
+{
+	"id": "hash-count-expander",
+	"name": "Hash Count Expander",
+	"version": "1.0.5",
+	"minAppVersion": "1.0.5",
+	"description": "Expand #4, 4#, or 4#4 into repeated # headings (max 50).",
+	"author": "ben",
+	"authorUrl": "",
+	"isDesktopOnly": false
+}

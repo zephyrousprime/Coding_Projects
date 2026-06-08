@@ -1,0 +1,5 @@
+{
+  "enableHashPrefix": true,
+  "enableHashSuffix": true,
+  "enableHashDouble": false
+}

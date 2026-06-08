@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Guide</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .libarys, .new {
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            color: #61dafb;
+            text-decoration: none;
+            margin-bottom: 5px;
+            border: 1px solid #61dafb;
+            padding: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .two-rows {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        </style>
+</head>
+<body>
+    <div class="libarys">
+        <a href="00_Libarys/Master.md">Libarys</a>
+    </div>
+    <div id="open_close">
+            <button id="open">Open</button>
+        </div>
+    <div class="new" class="two-rows">
+        
+        <a href="01_new projects/AI's/">AI's</a>
+        <a href="01_new projects/ball/">ball</a>
+        <a href="01_new projects/Better than 11's/">Better than 11's</a>
+        <a href="01_new projects/Caculator/">Caculator</a>
+        <a href="01_new projects/classes_with_php/">classes_with_php</a>
+        <a href="01_new projects/clock/">clock</a>
+        <a href="01_new projects/Data_test/">Data_test</a>
+        <a href="01_new projects/fans caclator/">fans caclator</a>
+        <a href="01_new projects/Fibanac/">Fibanac</a>
+        <a href="01_new projects/fun projects/">fun projects</a>
+        <a href="01_new projects/Image search app/">Image search app</a>
+        <a href="01_new projects/Intrest/">Intrest</a>
+        <a href="01_new projects/Login Test/">Login Test</a>
+        <a href="01_new projects/multipu/">multipu</a>
+        <a href="01_new projects/number guess plus plus/">number guess plus plus</a>
+        <a href="01_new projects/number guess/">number guess</a>
+        <a href="01_new projects/ODF/">ODF</a>
+        <a href="01_new projects/P5 can/">P5 can</a>
+        <a href="01_new projects/Pandom/">Pandom</a>
+        <a href="01_new projects/Password/">Password</a>
+        <a href="01_new projects/Pok API/">Pok API</a>
+        <a href="01_new projects/SQL/">SQL</a>
+        <a href="01_new projects/stats finder/">stats finder</a>
+        <a href="01_new projects/Tabulator/">Tabulator</a>
+        <a href="01_new projects/Weather/">Weather</a>
+    </div>
+    <script>
+        const openButton = document.getElementById('open');
+        const newSection = document.querySelector('.new');
+        window.onload = () => {
+            newSection.style.display = 'none';
+            newSection.style.flexDirection = 'row';
+            newSection.style.display= 'block';
+        };
+        openButton.addEventListener('click', () => {
+            if (newSection.style.display === 'none' || newSection.style.display === '') {
+                newSection.style.display = 'block';
+                openButton.textContent = 'Close';
+            } else {
+                newSection.style.display = 'none';
+                openButton.textContent = 'Open';
+            }
+        });
+    </script>
+</body>
+</html>

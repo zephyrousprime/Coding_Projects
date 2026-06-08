@@ -592,9 +592,7 @@ export default class Group{
 	
 	reinitializeHeight(){}
 	
-	calcHeight(){
-		this.outerHeight = this.element.offsetHeight;
-	}
+	calcHeight(){}
 	
 	setCellHeight(){}
 	

@@ -1,0 +1,44 @@
+{
+    "drops": [
+        {
+            "name": "Amber",
+            "chance": 19.5,
+            "value": 44
+        },
+        {
+            "name": "Dino Egg",
+            "chance": 19.5,
+            "value": 38
+        },
+        {
+            "name": "Dino Fossil",
+            "chance": 19.5,
+            "value": 45
+        },
+        {
+            "name": "Stegosaurus",
+            "chance": 19.5,
+            "value": 27
+        },
+        {
+            "name": "Velociraptor",
+            "chance": 9,
+            "value": 21
+        },
+        {
+            "name": "Brontosaurus",
+            "chance": 9,
+            "value": 14
+        },
+        {
+            "name": "Triceratops",
+            "chance": 3.7,
+            "value": 11
+        },
+        {
+            "name": "Tyrannosaurus Rex",
+            "chance": 0.3,
+            "value": 0
+        }
+    ]
+}

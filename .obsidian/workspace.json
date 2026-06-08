@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "1b533899f97dcc47",
+    "type": "split",
+    "children": [
+      {
+        "id": "295245784bd11942",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fa1a22e0cf9d6ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Libarys/Libary-Master.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Libary-Master"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5fb8b87b940e4776",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c33d481f7ca6cc0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d22261a3a2c97a90",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "69635f71f7ba80d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "649ae7584a89c55c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 221.5
+  },
+  "right": {
+    "id": "8f5988692490403e",
+    "type": "split",
+    "children": [
+      {
+        "id": "7192ab92a5c41b8c",
+        "type": "tabs",
+        "dimension": 72.18992248062015,
+        "children": [
+          {
+            "id": "abe124b5ac62ea0f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Excalidraw/Pokemon.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pokemon"
+            }
+          },
+          {
+            "id": "5fb521559185b0b4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "No Name Yet.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from No Name Yet"
+            }
+          },
+          {
+            "id": "96998d2e1a44dddb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "17c505d14028545a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "5 - Geo/Geo Rabbit Report.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Geo Rabbit Report"
+            }
+          }
+        ]
+      },
+      {
+        "id": "66b478882947f59e",
+        "type": "tabs",
+        "dimension": 27.810077519379846,
+        "children": [
+          {
+            "id": "b8c5dd1116c91681",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "9fa1a22e0cf9d6ea",
+  "lastOpenFiles": [
+    "00_Libarys/anime-master/dist/modules/types/index.d.ts",
+    "00_Libarys/anime-master/dist/modules/types",
+    "00_Libarys/anime-master/dist/modules/utils/time.js",
+    "00_Libarys/anime-master/dist/modules/utils/time.d.ts",
+    "00_Libarys/anime-master/dist/modules/utils/target.d.ts",
+    "00_Libarys/anime-master/dist/modules/utils/time.cjs",
+    "00_Libarys/anime-master/dist/modules/utils/target.js",
+    "00_Libarys/anime-master/dist/modules/utils/stagger.js",
+    "00_Libarys/anime-master/dist/modules/utils/target.cjs",
+    "00_Libarys/anime-master/dist/modules/utils/stagger.d.ts",
+    "00_Libarys/anime-master/dist/modules/utils/stagger.cjs",
+    "MaterMD.md",
+    "01_new projects/Project-Master.md",
+    "00_Libarys/anime-master/tests/playground/onscroll/assets/card.svg",
+    "00_Libarys/anime-master/tests/playground/onscroll/assets/card-back.svg",
+    "00_Libarys/anime-master/tests/playground/assets/media/ryu.png",
+    "00_Libarys/anime-master/tests/assets/icon.png",
+    "00_Libarys/anime-master/tests/assets/favicon.png",
+    "00_Libarys/anime-master/examples/timeline-50K-stars/cursor.png",
+    "00_Libarys/anime-master/examples/onscroll-sticky/card.svg",
+    "00_Libarys/anime-master/examples/onscroll-sticky/card-back.svg",
+    "00_Libarys/anime-master/examples/onscroll-responsive-scope/card-back.svg",
+    "00_Libarys/anime-master/examples/onscroll-responsive-scope/card.svg",
+    "00_Libarys/anime-master/README.md",
+    "00_Libarys/anime-master/LICENSE.md",
+    "00_Libarys/tabulator-master/CLAUDE.md",
+    "5 - Geo/Dam.md",
+    "1 - Science/Revision.md",
+    "Excalidraw/WhiteBoard.md",
+    "I don't know now.md",
+    "Reminders/To-Do list.md",
+    "README.md",
+    "2 - TI/SQL/SQL_Assiment.md",
+    "Improvements.md",
+    "5 - Geo/Question.md",
+    "5 - Geo/Rabbits asiment/CSIRO_Rabbit-Biocontrol_2017.md",
+    "5 - Geo/Rabbits asiment/Rabbits.md",
+    "2 - TI/SQL/Coding.md",
+    "test.md",
+    "No Name Yet.md",
+    "dd.md",
+    "bb.md",
+    "5 - Geo/Rabbits asiment/sear.unisq.edu.au.md",
+    "5 - Geo/Rabbits-ThinkBen.md",
+    "1 - Science/Chapter 7/Chapter 7 Motion and Energy.md",
+    "1 - Science/Chapter 7/Chapter 7.5.md",
+    "Untitled.canvas"
+  ]
+}

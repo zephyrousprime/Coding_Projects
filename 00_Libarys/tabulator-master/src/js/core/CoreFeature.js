@@ -45,7 +45,6 @@ export default class CoreFeature{
 	//////////////// Layout  /////////////////
 	//////////////////////////////////////////
 
-	/** @returns {("fitData" | "fitDataFill" | "fitDataTable" | "fitDataStretch" | "fitColumns")} */
 	layoutMode(){
 		return this.table.modules.layout.getMode();
 	}
