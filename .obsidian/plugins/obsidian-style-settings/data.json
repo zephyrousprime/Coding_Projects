@@ -1,0 +1,11 @@
+{
+  "obsidian-prism-theme@@inline-title-color-dt": "var(--interactive-accent-text)",
+  "obsidian-prism-theme@@h1-text-color-dt": "var(--color-pink-text)",
+  "obsidian-prism-theme@@h2-text-color-dt": "var(--color-red-text)",
+  "obsidian-prism-theme@@h4-text-color-dt": "var(--color-orange-text)",
+  "obsidian-prism-theme@@h6-text-color-dt": "var(--color-mint-text)",
+  "obsidian-prism-theme@@pt-icons-accent": true,
+  "obsidian-prism-theme@@pt-disable-callout-styling": false,
+  "obsidian-prism-theme@@link-internal-color-lt": "var(--color-yellow-text-hsl)",
+  "obsidian-prism-theme@@link-external-color-lt": "var(--color-cyan-text-hsl)"
+}
