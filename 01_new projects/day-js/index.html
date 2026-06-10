@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="hi">Hello, World!</h1>
+    <button class="hito">Click me!</button>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>
+        dayjs().format()
+        
+        setInterval(() => {
+            var day = dayjs()
+    console.log(day.format('YYYY-MMMM-DD-Do-HH-a-mm-ss-SSS'))
+        document.querySelector('.hi').innerHTML = day.format('YYYY-MMMM-DD-HHa-mm-ss-SSS')
+        }, 100);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

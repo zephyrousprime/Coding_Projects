@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "295245784bd11942",
+        "id": "63486003737c6762",
         "type": "tabs",
         "children": [
           {
-            "id": "9fa1a22e0cf9d6ea",
+            "id": "9a575dea3d993b90",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/Libary-Master.md",
+                "file": "00_Libarys/0_Gides/Day.js.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,16 +28,22 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Libary-Master"
+              "title": "Day.js"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "d40579dfcd68b398",
+        "type": "tabs",
+        "children": [
           {
-            "id": "19373db00df63180",
+            "id": "791e4b8572fb60ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/Master-Temp.md",
+                "file": "00_Libarys/0_Gides/Master-Temp.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -82,23 +88,6 @@
             }
           },
           {
-            "id": "69635f71f7ba80d2",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
-            }
-          },
-          {
             "id": "649ae7584a89c55c",
             "type": "leaf",
             "state": {
@@ -121,7 +110,7 @@
       {
         "id": "7192ab92a5c41b8c",
         "type": "tabs",
-        "dimension": 72.18992248062015,
+        "dimension": 75,
         "children": [
           {
             "id": "abe124b5ac62ea0f",
@@ -129,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Pokemon.md",
+                "file": "00_Libarys/Master-Temp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +128,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Pokemon"
+              "title": "Backlinks for Master-Temp"
             }
           },
           {
@@ -148,12 +137,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "No Name Yet.md",
+                "file": "00_Libarys/0_Gides/Day.js.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from No Name Yet"
+              "title": "Outgoing links from Day.js"
             }
           },
           {
@@ -176,22 +165,15 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5 - Geo/Geo Rabbit Report.md",
+                "file": "00_Libarys/0_Gides/Day.js.md",
                 "followCursor": false,
-                "showSearch": true,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Geo Rabbit Report"
+              "title": "Outline of Day.js"
             }
-          }
-        ]
-      },
-      {
-        "id": "66b478882947f59e",
-        "type": "tabs",
-        "dimension": 27.810077519379846,
-        "children": [
+          },
           {
             "id": "b8c5dd1116c91681",
             "type": "leaf",
@@ -199,7 +181,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false,
+                "useHierarchy": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -207,12 +189,36 @@
               "title": "Tags"
             }
           }
+        ],
+        "currentTab": 4
+      },
+      {
+        "id": "efa6220dfb7cacdd",
+        "type": "tabs",
+        "dimension": 25,
+        "children": [
+          {
+            "id": "69635f71f7ba80d2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -226,22 +232,43 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "9fa1a22e0cf9d6ea",
+  "active": "9a575dea3d993b90",
   "lastOpenFiles": [
-    "MaterMD.md",
+    "00_Libarys/0_Gides/Master-Temp.md",
+    "01_new projects/anime-js/script.js",
+    "01_new projects/anime-js/index.html",
+    "01_new projects/anime-js/style.css",
+    "01_new projects/anime-js",
+    "01_new projects/day-js/style.css",
+    "01_new projects/day-js/script.js",
+    "01_new projects/day-js/rocks.otf",
+    "01_new projects/day-js/soft.ttf",
+    "01_new projects/day-js/index.html",
+    "01_new projects/day-js",
+    "00_Libarys/0_Gides/Day.js.md",
+    "00_Libarys/0_Gides/D3.js.md",
+    "00_Libarys/0_Gides/Three.js.md",
+    "00_Libarys/0_Gides/Tabulator.md",
+    "00_Libarys/0_Gides/Lodash.md",
+    "00_Libarys/0_Gides/GSAP.md",
+    "00_Libarys/0_Gides/Chart.js.md",
+    "00_Libarys/0_Gides/Axios.md",
+    "00_Libarys/0_Gides/ApexCharts.md",
+    "00_Libarys/0_Gides/Anime.js.md",
     "00_Libarys/Libary-Master.md",
-    "00_Libarys/Master-Temp.md",
-    "01_new projects/anime.js/style.css",
-    "01_new projects/anime.js/script.js",
-    "01_new projects/anime.js/index.html",
-    "01_new projects/anime.js",
-    "01_new projects/Project-Master.md",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site_dark.min.css",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site_dark.min.css.map",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site_dark.css.map",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site.min.css.map",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site_dark.css",
-    "00_Libarys/tabulator-master/dist/css/tabulator_site.min.css",
+    "00_Libarys/Tabulator.md",
+    "00_Libarys/Chart.js.md",
+    "00_Libarys/ApexCharts.md",
+    "00_Libarys/Category-Index.md",
+    "00_Libarys/Anime.js.md",
+    "00_Libarys/gides/ApexCharts.md",
+    "00_Libarys/gides - Copy/Axios.md",
+    "00_Libarys/gides - Copy/ApexCharts.md",
+    "00_Libarys/gides - Copy/Anime.js.md",
+    "00_Libarys/gides - Copy/Three.js.md",
+    "00_Libarys/gides - Copy/Tabulator.md",
+    "00_Libarys/gides - Copy/Lodash.md",
+    "00_Libarys/gides - Copy/GSAP.md",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card.svg",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card-back.svg",
     "00_Libarys/anime-master/tests/playground/assets/media/ryu.png",
@@ -252,28 +279,6 @@
     "00_Libarys/anime-master/examples/onscroll-sticky/card-back.svg",
     "00_Libarys/anime-master/examples/onscroll-responsive-scope/card.svg",
     "00_Libarys/anime-master/examples/onscroll-responsive-scope/card-back.svg",
-    "00_Libarys/anime-master/README.md",
-    "00_Libarys/anime-master/LICENSE.md",
-    "00_Libarys/anime-master/CONTRIBUTING.md",
-    "00_Libarys/tabulator-master/CLAUDE.md",
-    "5 - Geo/Dam.md",
-    "1 - Science/Revision.md",
-    "Excalidraw/WhiteBoard.md",
-    "I don't know now.md",
-    "Reminders/To-Do list.md",
-    "README.md",
-    "2 - TI/SQL/SQL_Assiment.md",
-    "Improvements.md",
-    "5 - Geo/Question.md",
-    "5 - Geo/Rabbits asiment/CSIRO_Rabbit-Biocontrol_2017.md",
-    "5 - Geo/Rabbits asiment/Rabbits.md",
-    "2 - TI/SQL/Coding.md",
-    "test.md",
-    "No Name Yet.md",
-    "dd.md",
-    "bb.md",
-    "5 - Geo/Rabbits asiment/sear.unisq.edu.au.md",
-    "5 - Geo/Rabbits-ThinkBen.md",
     "Untitled.canvas"
   ]
 }

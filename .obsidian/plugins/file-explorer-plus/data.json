@@ -38,6 +38,13 @@
         "type": "FILES",
         "pattern": "5 - Geo/Rabbits asiment/Rabbits.md",
         "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "00_Libarys/0_Gides/Master-Temp.md",
+        "patternType": "STRICT"
       }
     ],
     "frontMatter": [
