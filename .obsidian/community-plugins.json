@@ -1,12 +1,10 @@
 [
   "code-styler",
-  "file-explorer-plus",
   "colored-tags",
-  "obsidian-style-settings",
-  "obsidian-kanban",
   "docxer",
-  "obsidian-excalidraw-plugin",
+  "file-explorer-plus",
+  "obsidian-style-settings",
   "mehrmaid",
-  "hash-count-expander",
-  "obsidian-latex-suite"
+  "obsidian-latex-suite",
+  "hash-count-expander"
 ]

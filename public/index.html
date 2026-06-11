@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <style>
+    .new.two-rows {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .new.two-rows a {
+      width: 48%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <input id="search" type="text" placeholder="Search projects...">
+  <div id="projects" class="new two-rows"></div>
+
+  <script>
+    const container = document.getElementById("projects");
+    const search = document.getElementById("search");
+    let allProjects = [];
+
+    function render(list) {
+      container.innerHTML = "";
+      list.forEach(project => {
+        const a = document.createElement("a");
+        a.href = project.url;
+        a.textContent = project.name;
+        container.appendChild(a);
+      });
+    }
+
+    fetch("/api/projects")
+      .then(res => res.json())
+      .then(projects => {
+        allProjects = projects;
+        render(allProjects);
+      });
+
+    search.addEventListener("input", () => {
+      const term = search.value.toLowerCase();
+      const filtered = allProjects.filter(project =>
+        project.name.toLowerCase().includes(term)
+      );
+      render(filtered);
+    });
+
+    container.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+      console.log("Clicked:", link.textContent);
+    });
+  </script>
+</body>
+</html>
