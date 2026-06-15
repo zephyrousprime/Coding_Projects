@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js vs ApexCharts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <header class="page-header">
+            <h1>Chart.js vs ApexCharts</h1>
+            <p>Compare two popular JavaScript charting libraries using a line chart example for monthly sales, revenue, and growth.</p>
+        </header>
+
+        <section class="charts-grid">
+            <article class="chart-card">
+                <h2>Chart.js</h2>
+                <p>A flexible chart built with Chart.js and two series for sales and expenses.</p>
+                <canvas id="lineChartjs"></canvas>
+            </article>
+
+            <article class="chart-card">
+                <h2>ApexCharts</h2>
+                <p>ApexCharts line chart with two series and a custom axis configuration.</p>
+                <div id="lineChartpa"></div>
+            </article>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js"></script>
+</body>
+</html>
