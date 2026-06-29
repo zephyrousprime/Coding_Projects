@@ -35,9 +35,21 @@
             "id": "69763262b51558fb",
             "type": "leaf",
             "state": {
+              "type": "vscode-editor",
+              "state": {
+                "file": "01_new projects/Weather/script.js"
+              },
+              "icon": "lucide-file",
+              "title": "script"
+            }
+          },
+          {
+            "id": "106011eb22265074",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/0_Gides/Chart.js.md",
+                "file": "MaterMD.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,11 +64,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Chart.js"
+              "title": "MaterMD"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -91,8 +103,19 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "0a2ab64dcdfeeb28",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -220,26 +243,31 @@
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "vscode-editor:Create Code File": false
     }
   },
-  "active": "69763262b51558fb",
+  "active": "106011eb22265074",
   "lastOpenFiles": [
     "00_Libarys/0_Gides/ApexCharts.md",
+    "MaterMD.md",
+    "sever.js",
+    "index.html",
+    "01_new projects/01_new projects.md",
+    "01_new projects/index.html",
+    "01_new projects/style.css",
+    "01_new projects/script.js",
+    "01_new projects/fun projects/index.html",
+    "01_new projects/fun projects/style.css",
+    "01_new projects/fun projects/script.js",
+    "Vault.md",
+    "Tags",
+    "01_new projects/Weather/script.js",
+    "01_new projects/Project-Master.md",
     "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/Master-Temp.md",
     "00_Libarys/0_Gides/Axios.md",
     "00_Libarys/0_Gides/Day.js.md",
-    "01_new projects/anime-js/script.js",
-    "01_new projects/anime-js/index.html",
-    "01_new projects/anime-js/style.css",
-    "01_new projects/anime-js",
-    "01_new projects/day-js/style.css",
-    "01_new projects/day-js/script.js",
-    "01_new projects/day-js/rocks.otf",
-    "01_new projects/day-js/soft.ttf",
-    "01_new projects/day-js/index.html",
-    "01_new projects/day-js",
     "00_Libarys/0_Gides/D3.js.md",
     "00_Libarys/0_Gides/Three.js.md",
     "00_Libarys/0_Gides/Tabulator.md",
@@ -256,10 +284,6 @@
     "00_Libarys/gides - Copy/Axios.md",
     "00_Libarys/gides - Copy/ApexCharts.md",
     "00_Libarys/gides - Copy/Anime.js.md",
-    "00_Libarys/gides - Copy/Three.js.md",
-    "00_Libarys/gides - Copy/Tabulator.md",
-    "00_Libarys/gides - Copy/Lodash.md",
-    "00_Libarys/gides - Copy/GSAP.md",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card.svg",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card-back.svg",
     "00_Libarys/anime-master/tests/playground/assets/media/ryu.png",

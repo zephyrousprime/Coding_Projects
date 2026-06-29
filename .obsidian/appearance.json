@@ -2,5 +2,6 @@
   "theme": "obsidian",
   "cssTheme": "Prism",
   "showRibbon": true,
-  "accentColor": "#ff0000"
+  "accentColor": "#ff0000",
+  "interfaceFontFamily": "JetBrains Mono NL"
 }

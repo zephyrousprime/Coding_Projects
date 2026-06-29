@@ -8,7 +8,7 @@ const data = [
   { month: 'Jul', revenue: 75, profit: 52 },
   
 ]
-const type = 'radar';
+const type = 'line';
 const apexOptions = {
   chart: {
     type: type,
@@ -52,7 +52,6 @@ const ctx = document.getElementById('lineChartjs').getContext('2d');
 const plugin = { filler: 'start' };
 new Chart(ctx, {
   type: type,
-  plugins: [plugin],
   data: {
     labels: data.map(d => d.month),
     datasets: [
