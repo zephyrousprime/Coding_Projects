@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "7d757dc7f74e166a",
+        "id": "98feb192f998f6f7",
         "type": "tabs",
         "children": [
           {
-            "id": "65d564d4d4eed2d6",
+            "id": "e9e6afc9a0dd0009",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/0_Gides/ApexCharts.md",
+                "file": "00_Libarys/0_Gides/Lodash.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,47 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ApexCharts"
-            }
-          },
-          {
-            "id": "69763262b51558fb",
-            "type": "leaf",
-            "state": {
-              "type": "vscode-editor",
-              "state": {
-                "file": "01_new projects/Weather/script.js"
-              },
-              "icon": "lucide-file",
-              "title": "script"
-            }
-          },
-          {
-            "id": "106011eb22265074",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MaterMD.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "MaterMD"
+              "title": "Lodash"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,8 +67,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -237,10 +199,26 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "106011eb22265074",
+  "active": "e9e6afc9a0dd0009",
   "lastOpenFiles": [
+    "00_Libarys/0_Gides/GSAP.md",
+    "00_Libarys/0_Gides/D3.js.md",
+    "00_Libarys/0_Gides/Chart.js.md",
+    "00_Libarys/0_Gides/Axios.md",
     "00_Libarys/0_Gides/ApexCharts.md",
+    "01_new projects/AI's/style.css",
+    "01_new projects/AI's/script.js",
+    "01_new projects/AI's/index.html",
+    "00_Libarys/0_Gides/Three.js.md",
+    "00_Libarys/0_Gides/Tabulator.md",
+    "00_Libarys/0_Gides/SurveyJS.md",
+    "00_Libarys/0_Gides/Lodash.md",
+    "00_Libarys/0_Gides/Day.js.md",
+    "00_Libarys/0_Gides/Anime.js.md",
+    "01_new projects/Weather/script.js",
+    "00_Libarys/Libary-Master.md",
     "MaterMD.md",
+    "01_new projects/Project-Master.md",
     "sever.js",
     "index.html",
     "01_new projects/01_new projects.md",
@@ -248,23 +226,8 @@
     "01_new projects/style.css",
     "01_new projects/script.js",
     "01_new projects/fun projects/index.html",
-    "01_new projects/fun projects/style.css",
-    "01_new projects/fun projects/script.js",
     "Vault.md",
-    "Tags",
-    "01_new projects/Weather/script.js",
-    "01_new projects/Project-Master.md",
-    "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/Master-Temp.md",
-    "00_Libarys/0_Gides/Axios.md",
-    "00_Libarys/0_Gides/Day.js.md",
-    "00_Libarys/0_Gides/D3.js.md",
-    "00_Libarys/0_Gides/Three.js.md",
-    "00_Libarys/0_Gides/Tabulator.md",
-    "00_Libarys/0_Gides/Lodash.md",
-    "00_Libarys/0_Gides/GSAP.md",
-    "00_Libarys/0_Gides/Anime.js.md",
-    "00_Libarys/Libary-Master.md",
     "00_Libarys/Tabulator.md",
     "00_Libarys/Chart.js.md",
     "00_Libarys/ApexCharts.md",
@@ -273,7 +236,6 @@
     "00_Libarys/gides/ApexCharts.md",
     "00_Libarys/gides - Copy/Axios.md",
     "00_Libarys/gides - Copy/ApexCharts.md",
-    "00_Libarys/gides - Copy/Anime.js.md",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card.svg",
     "00_Libarys/anime-master/tests/playground/onscroll/assets/card-back.svg",
     "00_Libarys/anime-master/tests/playground/assets/media/ryu.png",

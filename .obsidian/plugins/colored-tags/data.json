@@ -17,6 +17,7 @@
     "category/animation": 2,
     "category/charts": 3,
     "category/dates": 4,
+    "category/forms": 10,
     "category/networking": 9,
     "category/tables": 6,
     "category/utility": 7,
@@ -30,6 +31,7 @@
     "title/day-js": 6,
     "title/gsap": 7,
     "title/lodash": 8,
+    "title/surveyjs": 14,
     "title/tabulator": 9,
     "title/three-js": 10
   },
