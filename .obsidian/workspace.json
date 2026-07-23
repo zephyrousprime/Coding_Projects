@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/0_Gides/Lodash.md",
+                "file": "00_Libarys/0_Gides/SurveyJS.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Lodash"
+              "title": "SurveyJS"
             }
           }
         ]
@@ -171,7 +171,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#category/charts",
+                "query": "tag:#category/forms",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -190,6 +190,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "omnisearch:Omnisearch": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -201,31 +202,34 @@
   },
   "active": "e9e6afc9a0dd0009",
   "lastOpenFiles": [
+    "01_new projects/Surveyjs/results.html",
+    "01_new projects/Surveyjs/stats.svg",
+    "01_new projects/Surveyjs/home.svg",
+    "01_new projects/Surveyjs/load.php",
+    "01_new projects/Surveyjs/schema.sql",
+    "01_new projects/Surveyjs/insert.php",
+    "01_new projects/Surveyjs/database.js",
+    "01_new projects/Surveyjs/style.css",
+    "01_new projects/Surveyjs/script.js",
+    "01_new projects/Surveyjs/index.html",
+    "01_new projects/Surveyjs",
+    "01_new projects/-js/script.js",
+    "01_new projects/-js/style.css",
+    "00_Libarys/0_Gides/Lodash.md",
     "00_Libarys/0_Gides/GSAP.md",
     "00_Libarys/0_Gides/D3.js.md",
     "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/Axios.md",
     "00_Libarys/0_Gides/ApexCharts.md",
-    "01_new projects/AI's/style.css",
-    "01_new projects/AI's/script.js",
-    "01_new projects/AI's/index.html",
     "00_Libarys/0_Gides/Three.js.md",
     "00_Libarys/0_Gides/Tabulator.md",
     "00_Libarys/0_Gides/SurveyJS.md",
-    "00_Libarys/0_Gides/Lodash.md",
     "00_Libarys/0_Gides/Day.js.md",
     "00_Libarys/0_Gides/Anime.js.md",
-    "01_new projects/Weather/script.js",
     "00_Libarys/Libary-Master.md",
     "MaterMD.md",
     "01_new projects/Project-Master.md",
-    "sever.js",
-    "index.html",
     "01_new projects/01_new projects.md",
-    "01_new projects/index.html",
-    "01_new projects/style.css",
-    "01_new projects/script.js",
-    "01_new projects/fun projects/index.html",
     "Vault.md",
     "00_Libarys/0_Gides/Master-Temp.md",
     "00_Libarys/Tabulator.md",
@@ -244,8 +248,6 @@
     "00_Libarys/anime-master/examples/timeline-50K-stars/cursor.png",
     "00_Libarys/anime-master/examples/onscroll-sticky/card.svg",
     "00_Libarys/anime-master/examples/onscroll-sticky/card-back.svg",
-    "00_Libarys/anime-master/examples/onscroll-responsive-scope/card.svg",
-    "00_Libarys/anime-master/examples/onscroll-responsive-scope/card-back.svg",
     "Untitled.canvas"
   ]
 }

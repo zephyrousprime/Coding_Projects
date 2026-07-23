@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey Form</title>
+
+  <link
+    href="https://unpkg.com/survey-core/survey-core.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="index">
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="index.html"><img class="nav-icon" src="home.svg" alt="" width="24" height="24"><span>Survey</span></a></li>
+      <li><a href="results.html"><img class="nav-icon" src="stats.svg" alt="" width="24" height="24"><span>Results</span></a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Survey Form</h1>
+    <p>Fill out the form below. Your responses are saved to the database on submit.</p>
+  </header>
+
+  <main>
+    <div id="surveyContainer"></div>
+
+    <div id="statusMessage" class="status hidden"></div>
+  </main>
+
+  <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
