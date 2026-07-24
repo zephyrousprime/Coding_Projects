@@ -3,5 +3,6 @@
   "cssTheme": "Prism",
   "showRibbon": true,
   "accentColor": "#ff0000",
-  "interfaceFontFamily": "JetBrains Mono NL"
+  "interfaceFontFamily": "JetBrains Mono NL",
+  "textFontFamily": "JetBrains Mono NL"
 }

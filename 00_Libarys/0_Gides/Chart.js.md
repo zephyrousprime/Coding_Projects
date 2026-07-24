@@ -34,7 +34,7 @@ Simple yet flexible JavaScript charting library for designers and developers.
 **Local**
 
 ```html
-<script src="../../00_Libarys/chart.js/dist/chart.min.js"></script>
+<script src="../../00_Libarys/chart.js-master/dist/chart.min.js"></script>
 ```
 
 **CDN**

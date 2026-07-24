@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/0_Gides/SurveyJS.md",
+                "file": "00_Libarys/0_Gides/Chart.js.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "SurveyJS"
+              "title": "Chart.js"
             }
           }
         ]
@@ -80,7 +80,7 @@
       {
         "id": "7192ab92a5c41b8c",
         "type": "tabs",
-        "dimension": 75,
+        "dimension": 69.625,
         "children": [
           {
             "id": "abe124b5ac62ea0f",
@@ -163,7 +163,7 @@
       {
         "id": "efa6220dfb7cacdd",
         "type": "tabs",
-        "dimension": 25,
+        "dimension": 30.375000000000004,
         "children": [
           {
             "id": "69635f71f7ba80d2",
@@ -171,7 +171,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#category/forms",
+                "query": "tag:category/charts",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -190,18 +190,21 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "omnisearch:Omnisearch": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "vscode-editor:Create Code File": false
+      "bases:Create new base": false
     }
   },
   "active": "e9e6afc9a0dd0009",
   "lastOpenFiles": [
+    "00_Libarys/0_Gides/Axios.md",
+    "00_Libarys/0_Gides/ApexCharts.md",
+    "00_Libarys/0_Gides/Anime.js.md",
+    "00_Libarys/0_Gides/Chart.js.md",
+    "00_Libarys/0_Gides/SurveyJS.md",
     "01_new projects/Surveyjs/results.html",
     "01_new projects/Surveyjs/stats.svg",
     "01_new projects/Surveyjs/home.svg",
@@ -214,18 +217,12 @@
     "01_new projects/Surveyjs/index.html",
     "01_new projects/Surveyjs",
     "01_new projects/-js/script.js",
-    "01_new projects/-js/style.css",
     "00_Libarys/0_Gides/Lodash.md",
     "00_Libarys/0_Gides/GSAP.md",
     "00_Libarys/0_Gides/D3.js.md",
-    "00_Libarys/0_Gides/Chart.js.md",
-    "00_Libarys/0_Gides/Axios.md",
-    "00_Libarys/0_Gides/ApexCharts.md",
     "00_Libarys/0_Gides/Three.js.md",
     "00_Libarys/0_Gides/Tabulator.md",
-    "00_Libarys/0_Gides/SurveyJS.md",
     "00_Libarys/0_Gides/Day.js.md",
-    "00_Libarys/0_Gides/Anime.js.md",
     "00_Libarys/Libary-Master.md",
     "MaterMD.md",
     "01_new projects/Project-Master.md",
