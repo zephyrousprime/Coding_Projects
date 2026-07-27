@@ -1,0 +1,46 @@
+{
+  "name": "new-project",
+  "displayName": "New Project Creator",
+  "description": "Creates a new project folder from template files with a hotkey",
+  "version": "1.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "newProject.create",
+        "title": "New Project: Create from Template"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "newProject.create",
+        "key": "ctrl+shift+n",
+        "mac": "cmd+shift+n"
+      }
+    ],
+    "configuration": {
+      "title": "New Project Creator",
+      "properties": {
+        "newProject.files": {
+          "type": "array",
+          "default": [
+            "index.html",
+            "style.css",
+            "script.js"
+          ],
+          "description": "List of files to copy from the template directory into new projects."
+        },
+        "newProject.templateDir": {
+          "type": "string",
+          "default": "01_new projects",
+          "description": "Name of the template folder (relative to workspace root) that contains the source files."
+        }
+      }
+    }
+  }
+}
