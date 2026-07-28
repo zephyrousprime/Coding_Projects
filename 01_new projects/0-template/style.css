@@ -16,17 +16,21 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
+ @font-face {
     font-family: 'JetBrain';
     src: url('../1-Fonts/JetBrains.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+} 
+@import url(https://fonts.googleapis.com/css?family=Cascadia+Code:200,300,regular,500,600,700,200italic,300italic,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
 :root {
     --soft-font: 'soft', sans-serif;
     --strong-font: 'rocks', 'soft', sans-serif;
     --cascove-font: 'CasCove', sans-serif;
-    --jetbrain-font: 'JetBrain', sans-serif;
+    --jetbrain_mon-font: 'JetBrains Mono', sans-serif;
+    --jetbrain-font: 'JetBrains', sans-serif;
+    --cascode-font: 'Cascadia Code', sans-serif;
     --main-color: #ff0000;
     --secondary-color: #00ff00;
     --tertiary-color: #0000ff;
@@ -35,5 +39,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: var(--cascove-font), sans-serif;
+    background: transparent;
+    text-decoration: none;
+    color: var(--main-color);
 }
