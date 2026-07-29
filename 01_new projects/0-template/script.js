@@ -1,1 +1,0 @@
-const blank = document.getElementById
