@@ -1,0 +1,33 @@
+:root {
+    --main-color: hsl(190, 94%, 26%);
+    --primary-color: #cefd54;
+    --theme-bg: #121212;
+    --theme-bg-secondary: #1d1d1d;
+    --theme-fg: #ffffff;
+    --theme-fg-secondary: #b8b8b8;
+    --theme-lines: rgba(255, 255, 255, 0.12);
+    --nav-height: 4.8rem;
+    --container-padding: 4.8rem;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    text-decoration: none;
+    color: var(--main-color);
+    box-sizing: border-box;
+}
+html {
+    font-size: 0.69444vw;
+}
+@media (min-width: 1920px) { html { font-size: 13.33px; } }
+@media (max-width: 768px)  { html { font-size: 2.7778vw; } }
+li { list-style: none; }
+a  { color: var(--main-color); }
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+}
