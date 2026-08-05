@@ -18,7 +18,7 @@
     top: -0.8rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 100rem;
+    width: fit-content;
     max-height: calc(100svh - 3.2rem);
     border-radius: 3.2rem;
     opacity: 0;
@@ -53,7 +53,8 @@
 }
 .menu-dropdown {
     width: fit-content;
-    max-width: 100%;   
+    max-width: 100%;
+    padding: 2rem 3.2rem;
     background: var(--theme-bg);
     border-radius: 3.2rem;
     color: var(--theme-fg);
@@ -98,4 +99,4 @@
     color: var(--theme-fg-secondary);
     
 }
-.active { color: var(--secondary-color, var(--main-color)); font-size: 1.4rem; }
+.active { color: var(--secondary-color, var(--main-color));}

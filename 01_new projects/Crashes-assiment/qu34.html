@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions 3 & 4</title>
+    <title>Crash Home</title>
 </head>
 <body>
     <div class="site-header">
@@ -36,9 +36,23 @@
                                         <div class="menu-dropdown-columns">
                                             <div class="menu-column">
                                                 <ul class="menu-column-links">
-                                                    <li><a href="qu12.html" class="menu-column-link">Questions <br> 1 & 2  </a></li>
-                                                    <li><a href="qu34.html" class="menu-column-link">Questions <br> 3 & 4  </a></li>
-                                                    <li><a href="over-qu.html" class="menu-column-link">Overarching Questions  </a></li>
+                                                    <li>
+                                                        <a href="index.html" class="menu-column-link">Home<br> Page
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="over-qu.html" class="menu-column-link">Overarching<br> Questions  
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="qu12.html" class="menu-column-link">Questions <br> 1 & 2  
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="qu34.html" class="menu-column-link">Questions <br> 3 & 4  
+                                                        </a>
+                                                    </li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -52,12 +66,18 @@
 
             <div class="site-header-nav-secondary">
                 <div class="site-header-nav-secondary-content">
-                    
                 </div>
             </div>
         </header>
     </div>
 
+    <div id="que3-chart"></div>
+    <div class="chart-box">
+        <canvas id="myChart" class="chart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
