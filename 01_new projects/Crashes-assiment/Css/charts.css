@@ -1,11 +1,13 @@
 .apex-chart {
     width: 100%;
+    margin-top: 8rem;
     margin-bottom: 1.5rem;
     background: var(--theme-bg-secondary);
     border: 1px solid var(--theme-lines);
     border-radius: 14px;
     overflow: hidden;
 }
+
 .chart-box {
     width: 100%;
     height: 460px;

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Libarys/0_Gides/Chart.js.md",
+                "file": "00_Libarys/0_Gides/D3.js.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Chart.js"
+              "title": "D3.js"
             }
           }
         ]
@@ -173,7 +173,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:category/charts",
+                "query": "tag:#category/visualisation",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -204,10 +204,10 @@
   },
   "active": "e9e6afc9a0dd0009",
   "lastOpenFiles": [
+    "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/Axios.md",
     "00_Libarys/0_Gides/ApexCharts.md",
     "00_Libarys/0_Gides/Anime.js.md",
-    "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/SurveyJS.md",
     "01_new projects/Surveyjs/results.html",
     "01_new projects/Surveyjs/stats.svg",
