@@ -6,7 +6,7 @@ export function getCSSVariable(varName) {
     return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
 }
 export function fetchData(htmlFile) {
-    fetch('./Fatal Crashes.json')
+    fetch('./Data/Fatal Crashes.json')
         .then(response => response.json())
         .then(data => {
             const apchart = new ApexCharts();

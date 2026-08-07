@@ -143,7 +143,7 @@ export class ApexCharts {
                         const year = years[config.dataPointIndex];
                         if (!year || !this.monthChart) return;
 
-                        this.monthChart.updateSeries([{ name: `Fatal crashes in ${year}`, data: yearMonthData[year] }]);
+                        this.monthChart.updateSeries([{ name: `Fatal crashes in ${year}`, data: yearMonthData[year] }], true);
                         this.monthChart.updateOptions({
                             subtitle: {
                                 text: `Monthly fatal crashes in ${year}`,
@@ -178,7 +178,14 @@ export class ApexCharts {
                 ...baseOptions.chart,
                 id: 'q3-month',
                 type: 'bar',
-                height: 320
+                height: 320,
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 800,
+                    animateGradually: { enabled: true },
+                    dynamicAnimation: { enabled: true, speed: 800 }
+                }
             },
             colors: ['var(--chart-violet)'],
             title: {
@@ -196,48 +203,57 @@ export class ApexCharts {
     }
 
     Que4(processedData) {
-        const labels = ['Motorcycle rider', 'Driver', 'Passenger', 'Pedestrian', 'Pedal cyclist'];
-        const counts = labels.map(label => 0);
-
+        const counts = {};
         processedData.forEach(record => {
-            const index = labels.indexOf(record['Road User']);
-            if (index !== -1) counts[index]++;
+            const user = record['Road User'];
+            if (user) counts[user] = (counts[user] || 0) + 1;
         });
 
-        const total = counts.reduce((a, b) => a + b, 0);
+        const leaf = (x) => ({ x, y: counts[x] || 0 });
+        const count = (x) => counts[x] || 0;
+        const data = [
+            {
+                x: 'Car',
+                children: [leaf('Driver'), leaf('Passenger')]
+            },
+            { x: 'Motorbike', y: count('Motorcycle rider') },
+            {
+                x: 'Other',
+                children: [leaf('Pedestrian'), leaf('Pedal cyclist')]
+            }
+        ];
+        data[0].y = count('Driver') + count('Passenger');
+        data[2].y = count('Pedestrian') + count('Pedal cyclist');
 
         createApexChart('#que4-chart', {
             ...this.#createBaseOptions(),
             chart: {
                 ...this.#createBaseOptions().chart,
-                type: 'donut',
-                height: 400
+                type: 'sunburst',
+                height: 460
             },
-            colors: ['var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-blue)', 'var(--chart-coral)', 'var(--chart-green)'],
-            labels,
+            colors: ['var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-coral)'],
             title: {
                 text: 'Should I ride a motorbike?',
                 style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
             },
             subtitle: {
-                text: 'Fatal crashes by road user type',
+                text: 'Fatal crashes by road user type — click a wedge to zoom in',
                 style: { color: 'var(--chart-muted)', fontSize: '13px' }
             },
-            series: counts,
-            stroke: { colors: ['var(--chart-card)'], width: 4 },
+            series: [{ data }],
+            stroke: { colors: ['var(--chart-card)'], width: 3 },
             plotOptions: {
-                pie: {
-                    donut: { size: '62%' },
-                    expandOnClick: true,
-                    borderRadius: 8
-                }
+                sunburst: {
+                    innerSize: '15%',
+                    borderRadius: 6,
+                    spacing: 2,
+                    zoomOnClick: true
+                } //miss with this
             },
             dataLabels: {
                 enabled: true,
-                formatter: (val, opts) => {
-                    const count = opts.w.globals.series[opts.seriesIndex];
-                    return `${opts.w.globals.labels[opts.seriesIndex]}: ${val.toFixed(1)}% (${count.toLocaleString()})`;
-                }
+                style: { fontSize: '12px' }
             },
             tooltip: {
                 theme: 'dark',

@@ -3,6 +3,7 @@
 @import "Css/navigation.css";
 @import "Css/dropdown.css";
 @import "Css/charts.css";
+@import "Css/home.css";
 .grid-choice {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
