@@ -23,7 +23,6 @@
     width: 4.8rem;
     height: 4.8rem;
     border-radius: 2.4rem;
-    background: var(--primary-color);
 }
 .site-header-nav-primary-icon a {
     display: flex;

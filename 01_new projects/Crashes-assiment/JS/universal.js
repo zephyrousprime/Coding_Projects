@@ -2,25 +2,9 @@ import { ChartJS } from './chartjs.js';
 import { ApexCharts } from './apex.js';
 export const mon_names = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
-
-export const chart_theme = {
-    fontFamily: 'Inter, "Segoe UI", system-ui, Arial, sans-serif',
-    foreground: '#e5e7eb',
-    muted: '#9ca3af',
-    grid: 'rgba(255, 255, 255, 0.07)',
-    card: '#1d1d1d',
-    tooltipBg: '#0b0b0b',
-    lime: '#cefd54',
-    teal: '#2dd4bf',
-    amber: '#fbbf24',
-    coral: '#fb7185',
-    violet: '#a78bfa',
-    blue: '#60a5fa',
-    green: '#34d399',
-    slate: '#94a3b8',
-    red: '#f43f5e'
-};
-
+export function getCSSVariable(varName) {
+    return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+}
 export function fetchData(htmlFile) {
     fetch('./Fatal Crashes.json')
         .then(response => response.json())
@@ -34,8 +18,9 @@ export function fetchData(htmlFile) {
                     break;
                 case 'qu34.html':
                     apchart.Que3(data);
-                    chartjs.Que4(data);
+                    apchart.Que4(data);
                     break;
+                case 'index.html':
                 case 'over-qu.html':
                     break;
                 default:

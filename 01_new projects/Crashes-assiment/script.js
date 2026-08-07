@@ -1,14 +1,12 @@
-import { mon_names, chart_theme, fetchData  } from './JS/universal.js';
+import { mon_names, fetchData, getCSSVariable  } from './JS/universal.js';
 import { ChartJS } from './JS/chartjs.js';
 import { ApexCharts } from './JS/apex.js';
-/* 
+/* do not Delete this coment
 • What is the most dangerous day of the week to drive? -- ApexCharts -- Que1
 • Is Christmas more dangerous than Easter? -- ChartJS -- Que2
 • Are fatalities reducing over time? -- ApexCharts -- Que3
-• Should I ride a motorbike? -- ChartJS -- Que4
+• Should I ride a motorbike? -- ApexCharts -- Que4
 */
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('nav div div div div div ul li a');
@@ -34,6 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
     }
 
+    const multipleChoice = document.querySelectorAll('.multiple-choice');
+    const changing = document.getElementById('changing-herf');
+    multipleChoice.forEach(choice => {
+        choice.addEventListener('click', function(event) {
+            const item = event.target.closest('.multiple-choice');
+            if (!item || !item.id) return;
+            changing.setAttribute('href', item.id + '.html');
+            const showtohide = item.closest('.show-to-hide');
+            if (showtohide.contains(id('changing-herf'))) {
+                showtohide.classList.add('show-to-hide--hidden');
+                setTimeout(() => {
+                    showtohide.classList.remove('show-to-hide--hidden');
+                }, 300);
+            }});
+    });
     const siteHeader = document.querySelector('.site-header');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const dropdownBtns = document.querySelectorAll('.menu-btn[aria-expanded]');

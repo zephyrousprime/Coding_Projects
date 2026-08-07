@@ -1,4 +1,4 @@
-import { mon_names, chart_theme  } from './universal.js';
+import { mon_names, getCSSVariable } from './universal.js';
 
 function createApexChart(selector, options) {
     const container = document.querySelector(selector);
@@ -10,29 +10,28 @@ function createApexChart(selector, options) {
 export class ApexCharts {
     constructor() {
         this.monthChart = null;
+        this.motorbikeCount = 0;
+        this.driverCount = 0;
+        this.passengerCount = 0;
+        this.pedestrianCount = 0;
+        this.cyclistCount = 0;
     }
     #createBaseOptions() {
         return {
             chart: {
                 background: 'transparent',
-                foreColor: chart_theme.foreground,
-                fontFamily: chart_theme.fontFamily,
+                foreColor: 'var(--chart-foreground)',
+                fontFamily: 'var(--chart-font-family)',
                 toolbar: { show: true },
                 animations: { easing: 'easeinout', speed: 800 }
             },
-            grid: { borderColor: chart_theme.grid },
+            grid: { borderColor: 'var(--chart-grid)' },
             dataLabels: { enabled: false },
             tooltip: { theme: 'dark',
     style: { fontSize: '13px' },
     y: { formatter: value => value.toLocaleString() }},
-            legend: { show: false },
             xaxis: {
-                axisBorder: { color: chart_theme.grid },
-                axisTicks: { color: chart_theme.grid },
-                labels: { style: { colors: chart_theme.muted } }
-            },
-            yaxis: {
-                labels: { style: { colors: chart_theme.muted } }
+                axisBorder: { color: 'var(--chart-grid)' }
             }
         };
     }
@@ -58,14 +57,14 @@ export class ApexCharts {
                 type: 'line',
                 height: 400
             },
-            colors: [chart_theme.lime, chart_theme.amber],
+            colors: ['var(--chart-lime)', 'var(--chart-amber)'],
             title: {
                 text: 'What is the most dangerous day of the week to drive?',
-                style: { color: chart_theme.foreground, fontSize: '18px', fontWeight: 600 }
+                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
             },
             subtitle: {
                 text: 'Fatal crashes by day of the week (columns) with share of all crashes (line)',
-                style: { color: chart_theme.muted, fontSize: '13px' }
+                style: { color: 'var(--chart-muted)', fontSize: '13px' }
             },
             series: [
                 { name: 'Fatal crashes', type: 'column', data: crashTotals },
@@ -73,24 +72,24 @@ export class ApexCharts {
             ],
             plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } },
             stroke: { width: [0, 3], curve: 'smooth' },
-            markers: { size: 5, colors: [chart_theme.amber], strokeColors: chart_theme.card, strokeWidth: 2 },
+            markers: { size: 5, colors: ['var(--chart-amber)'], strokeColors: 'var(--chart-card)', strokeWidth: 2 },
             xaxis: {
                 categories,
-                axisBorder: { color: chart_theme.grid },
-                axisTicks: { color: chart_theme.grid },
-                labels: { style: { colors: chart_theme.muted } }
+                axisBorder: { color: 'var(--chart-grid)' },
+                axisTicks: { color: 'var(--chart-grid)' },
+                labels: { style: { colors: 'var(--chart-muted)' } }
             },
             yaxis: [
                 {
-                    title: { text: 'Fatal crashes', style: { color: chart_theme.muted } },
-                    labels: { style: { colors: chart_theme.muted } }
+                    title: { text: 'Fatal crashes', style: { color: 'var(--chart-muted)' } },
+                    labels: { style: { colors: 'var(--chart-muted)' } }
                 },
                 {
                     opposite: true,
                     min: 0,
                     max: Math.max(...sharePct) + 2,
-                    title: { text: 'Share of crashes (%)', style: { color: chart_theme.muted } },
-                    labels: { formatter: value => value + '%', style: { colors: chart_theme.muted } }
+                    title: { text: 'Share of crashes (%)', style: { color: 'var(--chart-muted)' } },
+                    labels: { formatter: value => value + '%', style: { colors: 'var(--chart-muted)' } }
                 }
             ],
             tooltip: {
@@ -105,7 +104,7 @@ export class ApexCharts {
             legend: {
                 position: 'bottom',
                 horizontalAlign: 'center',
-                labels: { colors: chart_theme.foreground },
+                labels: { colors: 'var(--chart-foreground)' },
                 markers: { size: 8 }
             }
         });
@@ -148,24 +147,24 @@ export class ApexCharts {
                         this.monthChart.updateOptions({
                             subtitle: {
                                 text: `Monthly fatal crashes in ${year}`,
-                                style: { color: chart_theme.muted, fontSize: '13px' }
+                                style: { color: 'var(--chart-muted)', fontSize: '13px' }
                             }
                         });
                     }
                 }
             },
-            colors: [chart_theme.teal],
+            colors: ['var(--chart-teal)'],
             title: {
                 text: 'Are fatalities reducing over time?',
-                style: { color: chart_theme.foreground, fontSize: '18px', fontWeight: 600 }
+                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
             },
             subtitle: {
                 text: 'Click a year point to see that year by month',
-                style: { color: chart_theme.muted, fontSize: '13px' }
+                style: { color: 'var(--chart-muted)', fontSize: '13px' }
             },
             series: [{ name: 'Fatal crashes', data: yearTotals }],
             stroke: { curve: 'smooth', width: 3 },
-            markers: { size: 5, hover: { size: 7 }, colors: [chart_theme.teal], strokeColors: chart_theme.card, strokeWidth: 2 },
+            markers: { size: 5, hover: { size: 7 }, colors: ['var(--chart-teal)'], strokeColors: 'var(--chart-card)', strokeWidth: 2 },
             fill: {
                 type: 'gradient',
                 gradient: { shadeIntensity: 1, opacityFrom: 0.35, opacityTo: 0.05, stops: [0, 90, 100] }
@@ -181,18 +180,78 @@ export class ApexCharts {
                 type: 'bar',
                 height: 320
             },
-            colors: [chart_theme.violet],
+            colors: ['var(--chart-violet)'],
             title: {
                 text: 'Fatal crashes by month of the year',
-                style: { color: chart_theme.foreground, fontSize: '18px', fontWeight: 600 }
+                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
             },
             subtitle: {
                 text: 'Seasonal pattern across all years',
-                style: { color: chart_theme.muted, fontSize: '13px' }
+                style: { color: 'var(--chart-muted)', fontSize: '13px' }
             },
             series: [{ name: 'Fatal crashes (all years)', data: monthlyTotals }],
             plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } },
             xaxis: { ...baseOptions.xaxis, categories: mon_names }
         });
     }
+
+    Que4(processedData) {
+        const labels = ['Motorcycle rider', 'Driver', 'Passenger', 'Pedestrian', 'Pedal cyclist'];
+        const counts = labels.map(label => 0);
+
+        processedData.forEach(record => {
+            const index = labels.indexOf(record['Road User']);
+            if (index !== -1) counts[index]++;
+        });
+
+        const total = counts.reduce((a, b) => a + b, 0);
+
+        createApexChart('#que4-chart', {
+            ...this.#createBaseOptions(),
+            chart: {
+                ...this.#createBaseOptions().chart,
+                type: 'donut',
+                height: 400
+            },
+            colors: ['var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-blue)', 'var(--chart-coral)', 'var(--chart-green)'],
+            labels,
+            title: {
+                text: 'Should I ride a motorbike?',
+                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
+            },
+            subtitle: {
+                text: 'Fatal crashes by road user type',
+                style: { color: 'var(--chart-muted)', fontSize: '13px' }
+            },
+            series: counts,
+            stroke: { colors: ['var(--chart-card)'], width: 4 },
+            plotOptions: {
+                pie: {
+                    donut: { size: '62%' },
+                    expandOnClick: true,
+                    borderRadius: 8
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                formatter: (val, opts) => {
+                    const count = opts.w.globals.series[opts.seriesIndex];
+                    return `${opts.w.globals.labels[opts.seriesIndex]}: ${val.toFixed(1)}% (${count.toLocaleString()})`;
+                }
+            },
+            tooltip: {
+                theme: 'dark',
+                style: { fontSize: '13px' },
+                y: { formatter: value => value.toLocaleString() }
+            },
+            legend: {
+                position: 'bottom',
+                horizontalAlign: 'center',
+                labels: { colors: 'var(--chart-foreground)' },
+                markers: { size: 8 }
+            }
+        });
+    }
+    
 }
+    

@@ -1,3 +1,38 @@
+/* Theme Colors */
+:root {
+    --chart-font-family: 'Inter', 'Segoe UI', system-ui, Arial, sans-serif;
+    --chart-foreground: #e5e7eb;
+    --chart-muted: #9ca3af;
+    --chart-grid: rgba(255, 255, 255, 0.07);
+    --chart-card: #1d1d1d;
+    --chart-tooltip-bg: #0b0b0b;
+    --chart-lime: #cefd54;
+    --chart-teal: #2dd4bf;
+    --chart-amber: #fbbf24;
+    --chart-coral: #fb7185; 
+    --chart-violet: #a78bfa;
+    --chart-blue: #60a5fa;
+    --chart-green: #34d399;
+    --chart-slate: #94a3b8;
+    --chart-red: #f43f5e;
+    
+    /* Chart Styling Options */
+    --chart-font-size-sm: 13px;
+    --chart-font-size-title: 18px;
+    --chart-font-weight-bold: 600;
+    --chart-marker-size: 5px;
+    --chart-marker-size-hover: 7px;
+    --chart-marker-stroke-width: 2px;
+    --chart-stroke-width: 3px;
+    --chart-column-width: 55%;
+    --chart-border-radius: 6px;
+    --chart-animation-speed: 800ms;
+    --chart-animation-easing: easeinout;
+    --chart-legend-position: bottom;
+    --chart-tooltip-theme: dark;
+}
+
+/* Chart Container Styling */
 .apex-chart {
     width: 100%;
     margin-top: 8rem;
@@ -16,7 +51,22 @@
     border-radius: 14px;
     padding: 1.25rem;
 }
+
 #myChart {
     width: 100%;
     height: 100%;
+}
+
+/* ApexCharts Theme Configuration */
+.apexcharts-menu {
+    background-color: var(--chart-card) !important;
+    border-color: var(--chart-grid) !important;
+}
+
+.apexcharts-menu-item {
+    color: var(--chart-foreground) !important;
+}
+
+.apexcharts-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
 }
