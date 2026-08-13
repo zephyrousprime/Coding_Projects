@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "98feb192f998f6f7",
+        "id": "174353112960e483",
         "type": "tabs",
         "children": [
           {
-            "id": "e9e6afc9a0dd0009",
+            "id": "46cd98f467126d7c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00_Libarys/0_Gides/ApexCharts.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "ApexCharts"
+              "title": "New tab"
             }
           }
         ]
@@ -202,10 +188,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "e9e6afc9a0dd0009",
+  "active": "46cd98f467126d7c",
   "lastOpenFiles": [
-    "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/ApexCharts.md",
+    "00_Libarys/0_Gides/Chart.js.md",
     "00_Libarys/0_Gides/D3.js.md",
     "00_Libarys/0_Gides/Axios.md",
     "00_Libarys/0_Gides/Anime.js.md",

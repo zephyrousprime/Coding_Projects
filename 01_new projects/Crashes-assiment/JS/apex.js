@@ -1,4 +1,4 @@
-import { mon_names, getCSSVariable } from './universal.js';
+import { mon_names, getCSSVariable, titlesar } from './universal.js';
 
 function createApexChart(selector, options) {
     const container = document.querySelector(selector);
@@ -44,12 +44,12 @@ export class ApexCharts {
             const day = record['Dayweek'];
             if (day) counts[day] = (counts[day] || 0) + 1;
         });
-
+        
         const categories = dayOrder.filter(day => counts[day] !== undefined);
         const crashTotals = categories.map(day => counts[day]);
         const grandTotal = crashTotals.reduce((a, b) => a + b, 0);
         const sharePct = crashTotals.map(total => +((total / grandTotal) * 100).toFixed(1));
-
+        console.log(value);
         createApexChart('#que1-chart', {
             ...this.#createBaseOptions(),
             chart: {
@@ -57,39 +57,25 @@ export class ApexCharts {
                 type: 'line',
                 height: 400
             },
-            colors: ['var(--chart-lime)', 'var(--chart-amber)'],
-            title: {
-                text: 'What is the most dangerous day of the week to drive?',
-                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
-            },
-            subtitle: {
-                text: 'Fatal crashes by day of the week (columns) with share of all crashes (line)',
-                style: { color: 'var(--chart-muted)', fontSize: '13px' }
-            },
+            colors: titlesar[0].que1[2],
+            title: titlesar[0].que1[0],
+            subtitle: titlesar[0].que1[1],
             series: [
                 { name: 'Fatal crashes', type: 'column', data: crashTotals },
                 { name: 'Share of crashes (%)', type: 'line', data: sharePct }
             ],
-            plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } },
-            stroke: { width: [0, 3], curve: 'smooth' },
-            markers: { size: 5, colors: ['var(--chart-amber)'], strokeColors: 'var(--chart-card)', strokeWidth: 2 },
-            xaxis: {
-                categories,
-                axisBorder: { color: 'var(--chart-grid)' },
-                axisTicks: { color: 'var(--chart-grid)' },
-                labels: { style: { colors: 'var(--chart-muted)' } }
-            },
-            yaxis: [
-                {
-                    title: { text: 'Fatal crashes', style: { color: 'var(--chart-muted)' } },
-                    labels: { style: { colors: 'var(--chart-muted)' } }
-                },
-                {
+            plotOptions: titlesar[0].que1[3],
+            stroke: titlesar[0].que1[4],
+            markers: titlesar[0].que1[5],
+            xaxis: titlesar[0].que1[6],
+            yaxis: [titlesar[0].que1[7],{
                     opposite: true,
                     min: 0,
                     max: Math.max(...sharePct) + 2,
                     title: { text: 'Share of crashes (%)', style: { color: 'var(--chart-muted)' } },
-                    labels: { formatter: value => value + '%', style: { colors: 'var(--chart-muted)' } }
+                    labels: { style: { colors: 'var(--chart-muted)' } }
+                    
+                    
                 }
             ],
             tooltip: {
@@ -117,11 +103,8 @@ export class ApexCharts {
         processedData.forEach(record => {
             const year = record['Year'];
             const month = record['Month'];
-
             if (!year || !month) return;
-
             if (!yearMonthData[year]) yearMonthData[year] = new Array(12).fill(0);
-
             yearMonthData[year][month - 1]++;
             monthlyTotals[month - 1]++;
         });
