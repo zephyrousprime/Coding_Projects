@@ -1,4 +1,5 @@
-import { mon_names, getCSSVariable, titlesar } from './universal.js';
+import { mon_names, getCSSVariable} from './universal.js';
+import { titlesar } from './titlearhome.js';
 
 function createApexChart(selector, options) {
     const container = document.querySelector(selector);
@@ -49,7 +50,7 @@ export class ApexCharts {
         const crashTotals = categories.map(day => counts[day]);
         const grandTotal = crashTotals.reduce((a, b) => a + b, 0);
         const sharePct = crashTotals.map(total => +((total / grandTotal) * 100).toFixed(1));
-        console.log(value);
+        
         createApexChart('#que1-chart', {
             ...this.#createBaseOptions(),
             chart: {
@@ -68,16 +69,7 @@ export class ApexCharts {
             stroke: titlesar[0].que1[4],
             markers: titlesar[0].que1[5],
             xaxis: titlesar[0].que1[6],
-            yaxis: [titlesar[0].que1[7],{
-                    opposite: true,
-                    min: 0,
-                    max: Math.max(...sharePct) + 2,
-                    title: { text: 'Share of crashes (%)', style: { color: 'var(--chart-muted)' } },
-                    labels: { style: { colors: 'var(--chart-muted)' } }
-                    
-                    
-                }
-            ],
+            yaxis: [titlesar[0].que1[7], titlesar[0].que1[8]],
             tooltip: {
                 theme: 'dark',
                 shared: true,
@@ -87,12 +79,7 @@ export class ApexCharts {
                     formatter: value => Number.isInteger(value) ? value.toLocaleString() : value + '%'
                 }
             },
-            legend: {
-                position: 'bottom',
-                horizontalAlign: 'center',
-                labels: { colors: 'var(--chart-foreground)' },
-                markers: { size: 8 }
-            }
+            legend: titlesar[0].que1[9]
         });
     }
 
@@ -136,22 +123,13 @@ export class ApexCharts {
                     }
                 }
             },
-            colors: ['var(--chart-teal)'],
-            title: {
-                text: 'Are fatalities reducing over time?',
-                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
-            },
-            subtitle: {
-                text: 'Click a year point to see that year by month',
-                style: { color: 'var(--chart-muted)', fontSize: '13px' }
-            },
+            colors: titlesar[0].que3[2],
+            title: titlesar[0].que3[0],
+            subtitle: titlesar[0].que3[1],
             series: [{ name: 'Fatal crashes', data: yearTotals }],
-            stroke: { curve: 'smooth', width: 3 },
-            markers: { size: 5, hover: { size: 7 }, colors: ['var(--chart-teal)'], strokeColors: 'var(--chart-card)', strokeWidth: 2 },
-            fill: {
-                type: 'gradient',
-                gradient: { shadeIntensity: 1, opacityFrom: 0.35, opacityTo: 0.05, stops: [0, 90, 100] }
-            },
+            stroke: titlesar[0].que3[3],
+            markers: titlesar[0].que3[4],
+            fill: titlesar[0].que3[5],
             xaxis: { ...baseOptions.xaxis, categories: years }
         });
 
@@ -170,17 +148,11 @@ export class ApexCharts {
                     dynamicAnimation: { enabled: true, speed: 800 }
                 }
             },
-            colors: ['var(--chart-violet)'],
-            title: {
-                text: 'Fatal crashes by month of the year',
-                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
-            },
-            subtitle: {
-                text: 'Seasonal pattern across all years',
-                style: { color: 'var(--chart-muted)', fontSize: '13px' }
-            },
+            colors: titlesar[0].que3[9],
+            title: titlesar[0].que3[6],
+            subtitle: titlesar[0].que3[7],
             series: [{ name: 'Fatal crashes (all years)', data: monthlyTotals }],
-            plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } },
+            plotOptions: titlesar[0].que3[8],
             xaxis: { ...baseOptions.xaxis, categories: mon_names }
         });
     }
@@ -215,40 +187,19 @@ export class ApexCharts {
                 type: 'sunburst',
                 height: 460
             },
-            colors: ['var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-coral)'],
-            title: {
-                text: 'Should I ride a motorbike?',
-                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
-            },
-            subtitle: {
-                text: 'Fatal crashes by road user type — click a wedge to zoom in',
-                style: { color: 'var(--chart-muted)', fontSize: '13px' }
-            },
+            colors: titlesar[0].que4[0],
+            title: titlesar[0].que4[1],
+            subtitle: titlesar[0].que4[2],
             series: [{ data }],
-            stroke: { colors: ['var(--chart-card)'], width: 3 },
-            plotOptions: {
-                sunburst: {
-                    innerSize: '15%',
-                    borderRadius: 6,
-                    spacing: 2,
-                    zoomOnClick: true
-                } //miss with this
-            },
-            dataLabels: {
-                enabled: true,
-                style: { fontSize: '12px' }
-            },
+            stroke: titlesar[0].que4[3],
+            plotOptions: titlesar[0].que4[4],
+            dataLabels: titlesar[0].que4[5],
             tooltip: {
                 theme: 'dark',
                 style: { fontSize: '13px' },
                 y: { formatter: value => value.toLocaleString() }
             },
-            legend: {
-                position: 'bottom',
-                horizontalAlign: 'center',
-                labels: { colors: 'var(--chart-foreground)' },
-                markers: { size: 8 }
-            }
+            legend: titlesar[0].que4[6]
         });
     }
     
