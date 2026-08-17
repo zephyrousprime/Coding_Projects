@@ -1,6 +1,4 @@
 import { mon_names, fetchData, getCSSVariable  } from './JS/universal.js';
-import { ChartJS } from './JS/chartjs.js';
-import { ApexCharts } from './JS/apex.js';
 
 /* do not Delete this coment
 • What is the most dangerous day of the week to drive? -- ApexCharts -- Que1
@@ -8,6 +6,9 @@ import { ApexCharts } from './JS/apex.js';
 • Are fatalities reducing over time? -- ApexCharts -- Que3
 • Should I ride a motorbike? -- ApexCharts -- Que4
 */
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('nav div div div div div ul li a');
@@ -79,4 +80,28 @@ document.addEventListener('DOMContentLoaded', function() {
             if (mobileToggle) mobileToggle.classList.remove('mobile-menu-toggle--open');
         });
     }
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            window.dispatchEvent(new CustomEvent('themechange'));
+        });
+    }
+
+    const revealElements = document.querySelectorAll('.ques > *, .body > *, section > ul > li');
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
 });

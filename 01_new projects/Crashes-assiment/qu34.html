@@ -64,6 +64,10 @@
 
             <div class="site-header-nav-secondary">
                 <div class="site-header-nav-secondary-content">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+                        <svg class="theme-toggle-icon theme-toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg class="theme-toggle-icon theme-toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
                 </div>
             </div>
         </header>
@@ -72,15 +76,34 @@
     <div id="que3-year" class="apex-chart"></div>
     <div style="margin-top: 0;" id="que3-month" class="apex-chart"></div>
     <div class="que3-answer">
-        <h2>Most dangers day of the week?</h3>
-        <p>As you can see</p>
+        <h2>Fatalities show a seasonal pattern but limited long-term decline</h2>
+        <p>Fatal crashes peak during the summer months (December and January), consistent with increased holiday travel. While there is some year-to-year variation, the data does not show a strong consistent downward trend over the period analysed.</p>
+    </div>
+    <div class="ai-card" data-question="que3">
+        <button class="ai-btn" aria-label="Generate AI analysis">
+            <svg class="ai-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span>AI Analysis</span>
+        </button>
+        <div class="ai-response is-hidden">
+            <div class="ai-response-content"></div>
+        </div>
     </div>
     <div id="que4-chart" class="apex-chart"></div>
     <div class="que4-answer">
-        <h2>Most dangers day of the week?</h3>
-        <p>As you can see</p>
+        <h2>Motorcycle riders face disproportionate risk</h2>
+        <p>While car occupants make up the largest total number of fatal crashes, motorcycle riders are severely overrepresented relative to their road usage. Pedestrians and pedal cyclists also account for a notable share, highlighting the vulnerability of non-motorised road users.</p>
+    </div>
+    <div class="ai-card" data-question="que4">
+        <button class="ai-btn" aria-label="Generate AI analysis">
+            <svg class="ai-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span>AI Analysis</span>
+        </button>
+        <div class="ai-response is-hidden">
+            <div class="ai-response-content"></div>
+        </div>
     </div>
 
+    <script src="https://js.puter.com/v2/"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script type="module" src="script.js"></script>
 </body>

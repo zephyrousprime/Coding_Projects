@@ -64,6 +64,10 @@
 
             <div class="site-header-nav-secondary">
                 <div class="site-header-nav-secondary-content">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+                        <svg class="theme-toggle-icon theme-toggle-icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg class="theme-toggle-icon theme-toggle-icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    </button>
                 </div>
             </div>
         </header>
@@ -71,18 +75,41 @@
 
     <div class="ques">
         <div id="que1-chart" class="apex-chart"></div>
+        <div id="que1-detail-wrap" class="is-hidden">
+            <div id="que1-detail" class="apex-chart"></div>
+            <button id="que1-detail-close" class="detail-close" aria-label="Close day breakdown">×</button>
+        </div>
         <div class="que1-answer">
-            <h2>Most dangers day of the week?</h3>
-            <p>As you can see</p>
+            <h2>Saturday is the most dangerous day to drive</h2>
+            <p>Saturday records the highest number of fatal crashes at 9,987 18.3% of all crashes, followed by Friday at 8,973 16.4%. Together, the weekend days account for over a third of all fatal crashes. Monday is the safest day with just 6,299 (11.5%). It can also be seen that there is a pattern of increased crashs as the week goes on but this patteren stops on Sunday where it has less chrashes than Saturday and Friday but not Thursday. The decrease in fatal crashes on Sunday might be attributed to reduced traffic and improved driving conditions because more people are likely to be at home or just do one small trip.</p>
+        </div>
+        <div class="ai-card" data-question="que1">
+            <button class="ai-btn" aria-label="Generate AI analysis">
+                <svg class="ai-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                <span>AI Analysis</span>
+            </button>
+            <div class="ai-response is-hidden">
+                <div class="ai-response-content"></div>
+            </div>
         </div>
         <div class="chart-box">
             <canvas id="myChart" class="chart"></canvas>
         </div>
         <div class="que2-answer">
-            <h3>Most dangers day of the week?</h3>
-            <p>As you can see</p>
+            <h3>The Christmas period is more dangerous than Easter</h3>
+            <p>The Christmas holiday period sees significantly more fatal crashes than Easter, likely due to the longer holiday window, increased road travel, and higher rates of impaired driving during the festive season.</p>
+        </div>
+        <div class="ai-card" data-question="que2">
+            <button class="ai-btn" aria-label="Generate AI analysis">
+                <svg class="ai-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                <span>AI Analysis</span>
+            </button>
+            <div class="ai-response is-hidden">
+                <div class="ai-response-content"></div>
+            </div>
         </div>
     </div>
+    <script src="https://js.puter.com/v2/"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="script.js"></script>
