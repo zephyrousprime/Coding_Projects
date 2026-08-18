@@ -124,7 +124,7 @@ export const titlesar = [{
             'var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-coral)'
         ],
         {
-            text: 'Should I ride a motorbike?',
+            text: 'Fatal crashes by road user type',
             style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
         },
         {
@@ -153,24 +153,6 @@ export const titlesar = [{
             markers: { size: 8 }
         }
     ],
-    answers: {
-        que1: {
-            heading: 'Saturday is the most dangerous day to drive',
-            body: 'Saturday records the highest number of fatal crashes at 9,987 (18.3% of all crashes), followed by Friday at 8,973 (16.4%). Together, the weekend days (Saturday and Sunday) account for over a third of all fatal crashes. Wednesday is the safest day with just 6,891 fatal crashes (12.6%).'
-        },
-        que2: {
-            heading: 'The Christmas period is more dangerous than Easter',
-            body: 'The Christmas holiday period sees significantly more fatal crashes than Easter. This is likely due to the longer holiday window, increased road travel, and higher rates of impaired driving during the festive season.'
-        },
-        que3: {
-            heading: 'Fatalities show a seasonal pattern but limited long-term decline',
-            body: 'Fatal crashes peak during the summer months (December and January), consistent with increased holiday travel. While there is some year-to-year variation, the data does not show a strong consistent downward trend over the period analysed.'
-        },
-        que4: {
-            heading: 'Motorcycle riders face disproportionate risk',
-            body: 'While car occupants make up the largest total number of fatal crashes, motorcycle riders are severely overrepresented relative to their road usage. Pedestrians and pedal cyclists also account for a notable share of fatalities, highlighting vulnerability of non-motorised road users.'
-        }
-    },
     ai: {
         buttonLabel: 'AI Analysis',
         prompts: {

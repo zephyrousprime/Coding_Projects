@@ -96,6 +96,8 @@ export class ChartJS {
             }
         });
         this.#createDoughnutChart('62%');
+        this.quePrompts = this.quePrompts || {};
+        this.quePrompts.que2 = `You are analysing Australian fatal crash data (54,641 records) comparing Christmas and Easter holiday periods. The Christmas period has ${this.christmasCount.toLocaleString()} fatal crashes while Easter has ${this.easterCount.toLocaleString()} — Christmas has ${((this.christmasCount / this.easterCount) * 100 - 100).toFixed(0)}% more. Monthly breakdown — Christmas: ${mon_names.map((m, i) => this.christmasMonths[i] ? `${m} ${this.christmasMonths[i]}` : '').filter(Boolean).join(', ')}. Easter: ${mon_names.map((m, i) => this.easterMonths[i] ? `${m} ${this.easterMonths[i]}` : '').filter(Boolean).join(', ')}. Write a 5-6 sentence analysis comparing the two holiday periods, explaining why Christmas is more dangerous and what the monthly patterns reveal. Be specific with numbers and do not use bolding or italics.`;
     }
 
     refresh() {

@@ -124,7 +124,7 @@ export class ApexCharts {
         });
          const dayLabels = categories.map((d, i) => `${d}: ${crashTotals[i]} (${sharePct[i]}%)`);
     this.quePrompts = this.quePrompts || {};
-    this.quePrompts.que1 = `You are analysing Australian fatal crash data (54,641 records). The data shows fatal crashes by day of the week: ${dayLabels.join(', ')}. The most dangerous day is ${categories[sharePct.indexOf(Math.max(...sharePct))]} with ${Math.max(...sharePct)}% of all fatal crashes. Write a 5-6 sentence analysis explaining what the data reveals about driving danger by day of week. Be specific with numbers.`;
+    this.quePrompts.que1 = `You are analysing Australian fatal crash data (54,641 records). The data shows fatal crashes by day of the week: ${dayLabels.join(', ')}. The most dangerous day is ${categories[sharePct.indexOf(Math.max(...sharePct))]} with ${Math.max(...sharePct)}% of all fatal crashes. Write a 5-6 sentence analysis explaining what the data reveals about driving danger by day of week. Be specific with numbers and do not use bolding or italics.`;
     }
 
     renderDayDetail(day, monthly) {
@@ -256,7 +256,7 @@ export class ApexCharts {
          const yearSummary = years.map((y, i) => `${y}: ${yearTotals[i]}`).join(', ');
     const monthSummary = mon_names.map((m, i) => `${m}: ${monthlyTotals[i]}`).join(', ');
     this.quePrompts = this.quePrompts || {};
-    this.quePrompts.que3 = `You are analysing Australian fatal crash data (54,641 records) over time. Yearly totals: ${yearSummary}. Monthly totals across all years: ${monthSummary}. The data shows whether fatalities are increasing or decreasing over time, and seasonal patterns. Write a 5-6 sentence analysis about trends and seasonal patterns. Be specific with numbers.`;
+    this.quePrompts.que3 = `You are analysing Australian fatal crash data (54,641 records) over time. Yearly totals: ${yearSummary}. Monthly totals across all years: ${monthSummary}. The data shows whether fatalities are increasing or decreasing over time, and seasonal patterns. Write a 5-6 sentence analysis about trends and seasonal patterns. Be specific with numbers and do not use bolding or italics.`;
 
     }
 
@@ -308,7 +308,78 @@ export class ApexCharts {
         });
     const roadUserSummary = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(', ');
         this.quePrompts = this.quePrompts || {};
-        this.quePrompts.que4 = `You are analysing Australian fatal crash data (54,641 records) by road user type. The breakdown: ${roadUserSummary}. Car occupants (drivers + passengers) total ${data[0].y}, motorcycle riders ${count('Motorcycle rider')}, pedestrians ${count('Pedestrian')}, pedal cyclists ${count('Pedal cyclist')}. Write a 5-6 sentence analysis about which road users are most at risk and what this means for road safety. Be specific with numbers.`;
+        this.quePrompts.que4 = `You are analysing Australian fatal crash data (54,641 records) by road user type. The breakdown: ${roadUserSummary}. Car occupants (drivers + passengers) total ${data[0].y}, motorcycle riders ${count('Motorcycle rider')}, pedestrians ${count('Pedestrian')}, pedal cyclists ${count('Pedal cyclist')}. Write a 5-6 sentence analysis about which road users are most at risk and what this means for road safety. Be specific with numbers and do not use bolding or italics.`;
+    }
+
+    QueOver(processedData) {
+        const stateNames = { 'NSW': 'New South Wales', 'Vic': 'Victoria', 'Qld': 'Queensland', 'SA': 'South Australia', 'WA': 'Western Australia', 'Tas': 'Tasmania', 'NT': 'Northern Territory', 'ACT': 'ACT' };
+        const stateOrder = ['NSW', 'Vic', 'Qld', 'WA', 'SA', 'Tas', 'NT', 'ACT'];
+        const counts = {};
+
+        processedData.forEach(record => {
+            const state = record['State'];
+            if (state) counts[state] = (counts[state] || 0) + 1;
+        });
+
+        const categories = stateOrder.filter(s => counts[s]);
+        const totals = categories.map(s => counts[s]);
+        const labels = categories.map(s => stateNames[s] || s);
+        const grandTotal = totals.reduce((a, b) => a + b, 0);
+
+        createApexChart('#over-qu-chart', {
+            ...this.#createBaseOptions(),
+            chart: {
+                ...this.#createBaseOptions().chart,
+                type: 'bar',
+                height: 380
+            },
+            colors: ['var(--chart-teal)'],
+            title: {
+                text: 'Fatal crashes by state and territory',
+                style: { color: 'var(--chart-foreground)', fontSize: '18px', fontWeight: 600 }
+            },
+            subtitle: {
+                text: `${grandTotal.toLocaleString()} total fatal crashes across Australia`,
+                style: { color: 'var(--chart-muted)', fontSize: '13px' }
+            },
+            series: [{ name: 'Fatal crashes', data: totals }],
+            plotOptions: {
+                bar: {
+                    columnWidth: '55%',
+                    borderRadius: 6,
+                    dataLabels: {
+                        position: 'top'
+                    }
+                }
+            },
+            stroke: { width: 0 },
+            markers: { size: 0 },
+            xaxis: {
+                categories: labels,
+                ...this.#createBaseOptions().xaxis,
+                labels: { style: { colors: 'var(--chart-muted)', fontSize: '12px' } }
+            },
+            yaxis: {
+                title: { text: 'Fatal crashes', style: { color: 'var(--chart-muted)' } },
+                labels: { style: { colors: 'var(--chart-muted)' } }
+            },
+            dataLabels: {
+                enabled: true,
+                formatter: val => val.toLocaleString(),
+                style: { fontSize: '12px', colors: ['var(--chart-foreground)'] },
+                offsetY: -20
+            },
+            tooltip: {
+                theme: 'dark',
+                style: { fontSize: '13px' },
+                y: { formatter: val => val.toLocaleString() }
+            },
+            legend: { show: false }
+        });
+
+        const stateSummary = categories.map((s, i) => `${stateNames[s] || s}: ${totals[i]}`).join(', ');
+        this.quePrompts = this.quePrompts || {};
+        this.quePrompts['over-qu'] = `You are analysing Australian fatal crash data (${grandTotal.toLocaleString()} records) to answer "How safe are our roads?". Fatal crashes by state: ${stateSummary}. ${stateNames[categories[totals.indexOf(Math.max(...totals))]] || categories[totals.indexOf(Math.max(...totals))]} has the highest with ${Math.max(...totals).toLocaleString()} crashes, while ${stateNames[categories[totals.indexOf(Math.min(...totals))]] || categories[totals.indexOf(Math.min(...totals))]} has the fewest with ${Math.min(...totals).toLocaleString()}. Write a 6-8 sentence synthesis answering how safe Australian roads are, covering geographic distribution, when crashes happen, whether they are declining, and who is most at risk. Be specific with numbers and conclude with actionable insights.`;
     }
 }
     

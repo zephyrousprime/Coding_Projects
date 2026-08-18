@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overarching Questions</title>
+    <link rel="icon" type="image/x-icon" href="Icon/over-qu.svg">
 </head>
 <body>
     <div class="site-header">
@@ -73,6 +74,27 @@
         </header>
     </div>
 
+    <div class="ques">
+        <div class="over-qu-answer">
+            <h1>How safe are our roads?</h1>
+            <p>With 54,641 fatal crashes recorded across Australia, the data paints a clear picture of when, where, and to whom our roads are most dangerous. Saturdays are the deadliest day, accounting for 9,987 crashes (18.3% of the total), and when combined with Friday's 8,973 (16.4%), the two days alone make up over a third of all fatal crashes — a pattern strongly linked to weekend nightlife, fatigue, and impaired driving. Monday is the safest day with just 6,299 crashes (11.5%). Risk also surges during holiday periods, with the Christmas window recording significantly more fatal crashes than Easter, driven by longer travel distances and increased alcohol consumption. Seasonal trends reinforce this, as fatalities peak in December and January during the Australian summer when more people are on the roads. Despite improvements in vehicle safety and road infrastructure, there is no strong long-term decline in fatal crashes across the years in this dataset, suggesting that distracted driving, speed, and drug-impaired driving may be offsetting those gains. Motorcycle riders, pedestrians, and pedal cyclists face disproportionate risk relative to their presence on the road, reminding us that road safety must extend beyond drivers to protect the most vulnerable users. As the chart below shows, the burden is not shared equally across the country — certain states carry a far heavier toll, and it is in those regions where targeted enforcement, infrastructure investment, and public education could save the most lives.</p>
+        </div>
+        <div id="over-qu-chart" class="apex-chart"></div>
+        <div class="ai-card" data-question="over-qu">
+            <button class="ai-btn" aria-label="Generate AI analysis">
+                <svg class="ai-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                <span>AI Analysis</span>
+            </button>
+            <div class="ai-response is-hidden">
+                <div class="ai-response-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
     <script type="module" src="script.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

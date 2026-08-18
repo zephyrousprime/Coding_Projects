@@ -13,6 +13,7 @@ export function initAI(prompts) {
             btn.disabled = true;
             response.classList.remove('is-hidden');
             content.innerHTML = '<div class="ai-shimmer"></div>';
+            document.dispatchEvent(new CustomEvent('ai-stream-start'));
 
             try {
                 const stream = await puter.ai.chat(prompt, {
@@ -36,6 +37,7 @@ export function initAI(prompts) {
                 content.textContent = 'Error: ' + err.message;
             } finally {
                 btn.disabled = false;
+                document.dispatchEvent(new CustomEvent('ai-stream-end'));
             }
         });
     });

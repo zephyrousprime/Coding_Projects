@@ -1,17 +1,31 @@
+const titleEl = document.getElementById('changing-title');
+const linkEl = document.getElementById('changing-herf');
+const cards = document.querySelectorAll('.multiple-choice');
 
-const multipleChoice = document.querySelectorAll('.multiple-choice');
-const changing = document.getElementById('changing-herf');
-multipleChoice.forEach(choice => {
-    choice.addEventListener('click', function(event) {
-    const item = event.target.closest('.multiple-choice');
-    if (!item || !item.id) return;
-    changing.setAttribute('href', item.id + '.html');
-    changing.classList.add('pointer');
-    const showtohide = item.closest('.show-to-hide');
-    if (showtohide.contains(id('changing-herf'))) {
-        showtohide.classList.add('show-to-hide--hidden');
-        setTimeout(() => {
-            showtohide.classList.remove('show-to-hide--hidden');
-        }, 300);
-    }});
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const page = card.dataset.page;
+        const title = card.dataset.title;
+        if (!page || !title) return;
+
+        linkEl.href = page;
+
+        if (titleEl.textContent === title) {
+            window.location.href = page;
+            return;
+        }
+
+        titleEl.dispatchEvent(new CustomEvent('titlechange', { detail: title }));
+    });
+});
+
+linkEl.addEventListener('click', (e) => {
+    const href = linkEl.getAttribute('href');
+    if (!href) {
+        e.preventDefault();
+        return;
+    }
+});
+linkEl.addEventListener('change', (e) => {
+    linkEl.textContent = `<span>Go to ${e.detail}</span>`;
 });

@@ -57,7 +57,7 @@
     height: 100%;
 }
 
-#que1-detail.apex-chart {
+.ques > .apex-chart + .apex-chart {
     margin-top: 1.5rem;
 }
 

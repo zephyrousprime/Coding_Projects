@@ -31,6 +31,10 @@ In `03_User Experiece/`:
 - Library guides in `00_Libarys/0_Gides/` must follow `Master-Temp.md` formatting rules (H2 per library, `### Installation` / `### Examples`, bare URLs, blockquotes for gotchas, tagged code blocks).
 - Obsidian docs use `[[wikilinks]]` (e.g. `MaterMD.md`, `Libary-Master.md`).
 
+## Chat Logs
+
+At the end of every conversation (when the user says goodbye, thanks, or indicates they're done), write the full chat history — all user messages and assistant responses — to `chat-logs/YYYY-MM-DD_HH-MM.md` in the workspace root. Create the `chat-logs/` directory if it doesn't exist. Format each message as a markdown heading (`## User` / `## Assistant`) followed by the message body.
+
 ## Environment
 
 - Windows + PowerShell. The workspace path contains spaces (`G:\My Drive\1 school\TI\tech\code`), so always quote paths.

@@ -1,24 +1,48 @@
-.que1-answer h2{
-    font-size: 20px;
+/* Shared answer section styling */
+[class*="-answer"] {
+    background: var(--theme-bg-secondary);
+    border: 1px solid var(--theme-lines);
+    border-radius: 14px;
+    padding: 2.4rem;
+    margin-bottom: 1.5rem;
 }
-.que1-answer p{
-    font-size: 10px;
+
+[class*="-answer"] h1,
+[class*="-answer"] h2,
+[class*="-answer"] h3 {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--theme-fg);
 }
-.que2-answer h2{
-    font-size: 20px;
+
+[class*="-answer"] p {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: var(--theme-fg-secondary);
 }
-.que2-answer p{
-    font-size: 10px;
+
+/* Per-question heading sizes */
+.que1-answer h2,
+.que2-answer h2,
+.que3-answer h2,
+.que4-answer h2 {
+    font-size: 1.8rem;
 }
-.que3-answer h2{
-    font-size: 20px;
+
+.que2-answer h3 {
+    font-size: 1.5rem;
 }
-.que3-answer p{
-    font-size: 10px;
+
+/* Overarching answer */
+.over-qu-answer {
+    margin-top: 8rem;
 }
-.que4-answer h2{
-    font-size: 20px;
+.over-qu-answer h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
 }
-.que4-answer p{
-    font-size: 10px;
+
+.over-qu-answer p {
+    font-size: 1.3rem;
+    line-height: 1.7;
 }

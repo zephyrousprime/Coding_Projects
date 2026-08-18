@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             window.dispatchEvent(new CustomEvent('themechange'));
+            document.dispatchEvent(new CustomEvent('themeclick'));
         });
     }
 

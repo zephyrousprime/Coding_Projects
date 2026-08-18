@@ -22,8 +22,10 @@ export function fetchData(htmlFile) {
                     apchart.Que3(data);
                     apchart.Que4(data);
                     break;
-                case 'index.html':
                 case 'over-qu.html':
+                    apchart.QueOver(data);
+                    break;
+                case 'index.html':
                     break;
                 default:
                     console.error('Unknown HTML file:', htmlFile);
@@ -32,7 +34,8 @@ export function fetchData(htmlFile) {
                 que1: apchart.quePrompts?.que1,
                 que2: chartjs.quePrompts?.que2,
                 que3: apchart.quePrompts?.que3,
-                que4: apchart.quePrompts?.que4
+                que4: apchart.quePrompts?.que4,
+                'over-qu': apchart.quePrompts?.['over-qu']
     });
 
             //initAI(titlesar[0].ai.prompts);
