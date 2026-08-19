@@ -1,4 +1,5 @@
-import { mon_names, fetchData, getCSSVariable  } from './JS/universal.js';
+import { fetchData } from './JS/universal.js';
+import { titlesar } from './JS/titlearhome.js';
 
 /* do not Delete this coment
 • What is the most dangerous day of the week to drive? -- ApexCharts -- Que1
@@ -19,10 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    /* Populate answer sections from the centralized config array */
+    const cfg = titlesar[0];
+    
+
     switch (currentPage) {
-        case 'index.html':
-            fetchData('index.html');
-            break;
         case 'qu12.html':
             fetchData('qu12.html');
             break;
@@ -35,18 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const siteHeader = document.querySelector('.site-header');
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const dropdownBtns = document.querySelectorAll('.menu-btn[aria-expanded]');
     const backdrop = document.querySelector('.site-header-nav-backdrop');
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            siteHeader.classList.toggle('site-header--mobile-open');
-            mobileToggle.classList.toggle('mobile-menu-toggle--open');
-            const isOpen = siteHeader.classList.contains('site-header--mobile-open');
-            mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-        });
-    }
 
     dropdownBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -73,11 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 b.setAttribute('aria-expanded', 'false');
                 b.closest('li').classList.remove('site-header--expanded');
             });
-
             siteHeader.classList.remove('site-header--expanded');
             siteHeader.classList.remove('site-header--mobile-open');
-
-            if (mobileToggle) mobileToggle.classList.remove('mobile-menu-toggle--open');
         });
     }
 

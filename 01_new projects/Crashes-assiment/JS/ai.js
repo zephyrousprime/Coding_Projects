@@ -9,7 +9,7 @@ export function initAI(prompts) {
         btn.addEventListener('click', async () => {
             const prompt = prompts[questionId];
             if (!prompt) return;
-
+            puter.quiet = true
             btn.disabled = true;
             response.classList.remove('is-hidden');
             content.innerHTML = '<div class="ai-shimmer"></div>';

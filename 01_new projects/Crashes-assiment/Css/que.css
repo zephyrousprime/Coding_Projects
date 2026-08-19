@@ -46,3 +46,71 @@
     font-size: 1.3rem;
     line-height: 1.7;
 }
+
+/* Population comparison table */
+.pop-table {
+    margin-bottom: 1.5rem;
+}
+
+.pop-table-loading {
+    color: var(--theme-fg-secondary);
+    font-size: 1.1rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.pop-table-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--theme-fg);
+    margin-bottom: 1rem;
+}
+
+.pop-table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--theme-lines);
+}
+
+.pop-table-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    color: var(--theme-fg-secondary);
+}
+
+.pop-table-table thead {
+    background: var(--theme-bg-secondary);
+}
+
+.pop-table-table th {
+    padding: 1rem 1.4rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--theme-fg);
+    border-bottom: 1px solid var(--theme-lines);
+    white-space: nowrap;
+}
+
+.pop-table-table td {
+    padding: 0.8rem 1.4rem;
+    border-bottom: 1px solid var(--theme-lines);
+    white-space: nowrap;
+}
+
+.pop-table-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pop-table-table tbody tr:hover {
+    background: var(--theme-bg-secondary);
+}
+
+.pop-table-table td:nth-child(2),
+.pop-table-table td:nth-child(3),
+.pop-table-table td:nth-child(4),
+.pop-table-table th:nth-child(2),
+.pop-table-table th:nth-child(3),
+.pop-table-table th:nth-child(4) {
+    text-align: right;
+}

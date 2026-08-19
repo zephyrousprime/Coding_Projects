@@ -1,6 +1,6 @@
-import { mon_names, getCSSVariable} from './universal.js';
-import { titlesar } from './titlearhome.js';
+import { mon_names, getCSSVariable, titlesar } from './titlearhome.js';
 
+const cfg = titlesar[0];
 const instances = [];
 window.addEventListener('themechange', () => {
     instances.forEach(instance => instance.refresh());
@@ -15,11 +15,13 @@ export class ChartJS {
         this.chart = null;
         this.drilled = false;
         this.drilledLabel = '';
+        this.quePrompts = {};
         const canvas = document.getElementById('myChart');
         if (!canvas) return;
         this.ctx = canvas.getContext('2d');
         instances.push(this);
     }
+
     #createDoughnutChart(cutout = '62%') {
         if (!this.ctx) return;
         const labels = this.drilled ? mon_names : ['Christmas', 'Easter'];
@@ -27,11 +29,11 @@ export class ChartJS {
             ? (this.drilledLabel === 'Christmas' ? this.christmasMonths : this.easterMonths)
             : [this.christmasCount, this.easterCount];
         const title = this.drilled
-            ? { ...titlesar[0].que2[1], text: `Fatal crashes during the ${this.drilledLabel} period, by month` }
-            : titlesar[0].que2[1];
+            ? { ...cfg.que2[1], text: `Fatal crashes during the ${this.drilledLabel} period, by month` }
+            : cfg.que2[1];
         const subtitle = this.drilled
             ? { display: true, text: 'Click a slice to return to Christmas vs Easter', color: getCSSVariable('--chart-muted'), font: { size: 13 } }
-            : titlesar[0].que2[2];
+            : cfg.que2[2];
 
         this.chart = new Chart(this.ctx, {
             type: 'doughnut',
@@ -39,7 +41,7 @@ export class ChartJS {
                 labels,
                 datasets: [{
                     data,
-                    backgroundColor: titlesar[0].que2[4],
+                    backgroundColor: cfg.que2[4],
                     borderColor: getCSSVariable('--chart-card'),
                     borderWidth: 4,
                     hoverOffset: 10,
@@ -52,10 +54,10 @@ export class ChartJS {
                 maintainAspectRatio: false,
                 cutout,
                 plugins: {
-                    legend: titlesar[0].que2[0],
+                    legend: cfg.que2[0],
                     title,
                     subtitle,
-                    tooltip: titlesar[0].que2[3],
+                    tooltip: cfg.que2[3],
                 },
                 onClick: (event, elements, chart) => {
                     if (!elements.length) return;
@@ -65,8 +67,8 @@ export class ChartJS {
                         this.drilledLabel = '';
                         chart.data.labels = ['Christmas', 'Easter'];
                         chart.data.datasets[0].data = [this.christmasCount, this.easterCount];
-                        chart.options.plugins.title = titlesar[0].que2[1];
-                        chart.options.plugins.subtitle = titlesar[0].que2[2];
+                        chart.options.plugins.title = cfg.que2[1];
+                        chart.options.plugins.subtitle = cfg.que2[2];
                         chart.update();
                     } else {
                         const label = chart.data.labels[index];
@@ -74,7 +76,7 @@ export class ChartJS {
                         this.drilledLabel = label;
                         chart.data.labels = mon_names;
                         chart.data.datasets[0].data = label === 'Christmas' ? this.christmasMonths : this.easterMonths;
-                        chart.options.plugins.title = { ...titlesar[0].que2[1], text: `Fatal crashes during the ${label} period, by month` };
+                        chart.options.plugins.title = { ...cfg.que2[1], text: `Fatal crashes during the ${label} period, by month` };
                         chart.options.plugins.subtitle = { display: true, text: 'Click a slice to return to Christmas vs Easter', color: getCSSVariable('--chart-muted'), font: { size: 13 } };
                         chart.update();
                     }
@@ -85,19 +87,23 @@ export class ChartJS {
 
     Que2(processedData) {
         processedData.forEach(record => {
+            if (record['Christmas Period'] === 'Yes') this.christmasCount++;
+            if (record['Easter Period'] === 'Yes') this.easterCount++;
+
             const month = record['Month'];
-            if (record['Christmas Period'] === 'Yes') {
-                this.christmasCount++;
-                if (month) this.christmasMonths[month - 1]++;
-            }
-            if (record['Easter Period'] === 'Yes') {
-                this.easterCount++;
-                if (month) this.easterMonths[month - 1]++;
-            }
+            if (!month) return;
+            if (record['Christmas Period'] === 'Yes') this.christmasMonths[month - 1]++;
+            if (record['Easter Period'] === 'Yes') this.easterMonths[month - 1]++;
         });
-        this.#createDoughnutChart('62%');
-        this.quePrompts = this.quePrompts || {};
-        this.quePrompts.que2 = `You are analysing Australian fatal crash data (54,641 records) comparing Christmas and Easter holiday periods. The Christmas period has ${this.christmasCount.toLocaleString()} fatal crashes while Easter has ${this.easterCount.toLocaleString()} — Christmas has ${((this.christmasCount / this.easterCount) * 100 - 100).toFixed(0)}% more. Monthly breakdown — Christmas: ${mon_names.map((m, i) => this.christmasMonths[i] ? `${m} ${this.christmasMonths[i]}` : '').filter(Boolean).join(', ')}. Easter: ${mon_names.map((m, i) => this.easterMonths[i] ? `${m} ${this.easterMonths[i]}` : '').filter(Boolean).join(', ')}. Write a 5-6 sentence analysis comparing the two holiday periods, explaining why Christmas is more dangerous and what the monthly patterns reveal. Be specific with numbers and do not use bolding or italics.`;
+
+        this.#createDoughnutChart();
+
+        const christmasMonthly = mon_names.map((m, i) =>
+            this.christmasMonths[i] ? `${m} ${this.christmasMonths[i]}` : '').filter(Boolean).join(', ');
+        const easterMonthly = mon_names.map((m, i) =>
+            this.easterMonths[i] ? `${m} ${this.easterMonths[i]}` : '').filter(Boolean).join(', ');
+
+        this.quePrompts.que2 = `You are analysing Australian fatal crash data comparing Christmas and Easter holiday periods. The Christmas period has ${this.christmasCount.toLocaleString()} fatal crashes while Easter has ${this.easterCount.toLocaleString()} — Christmas has ${((this.christmasCount / this.easterCount) * 100 - 100).toFixed(0)}% more. Monthly breakdown — Christmas: ${christmasMonthly}. Easter: ${easterMonthly}. Write a 5-6 sentence analysis comparing the two holiday periods, explaining why Christmas is more dangerous and what the monthly patterns reveal. Be specific with numbers and do not use bolding or italics.`;
     }
 
     refresh() {

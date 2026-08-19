@@ -15,17 +15,13 @@ cards.forEach(card => {
             return;
         }
 
-        titleEl.dispatchEvent(new CustomEvent('titlechange', { detail: title }));
+        titleEl.dispatchEvent(new CustomEvent('titlechange', { detail: 'Go To '+ title, bubbles: true }));
     });
 });
 
 linkEl.addEventListener('click', (e) => {
     const href = linkEl.getAttribute('href');
-    if (!href) {
+    if (!href || href === '') {
         e.preventDefault();
-        return;
     }
-});
-linkEl.addEventListener('change', (e) => {
-    linkEl.textContent = `<span>Go to ${e.detail}</span>`;
 });

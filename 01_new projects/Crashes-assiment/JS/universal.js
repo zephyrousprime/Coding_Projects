@@ -1,12 +1,10 @@
+import { mon_names, getCSSVariable, titlesar } from './titlearhome.js';
 import { ChartJS } from './chartjs.js';
 import { ApexCharts } from './apex.js';
 import { initAI } from './ai.js';
-import { titlesar } from './titlearhome.js';
-export const mon_names = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'];
-export function getCSSVariable(varName) {
-    return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-}
+
+export { mon_names, getCSSVariable };
+
 export function fetchData(htmlFile) {
     fetch('./Data/Fatal Crashes.json')
         .then(response => response.json())
@@ -34,13 +32,9 @@ export function fetchData(htmlFile) {
                 que1: apchart.quePrompts?.que1,
                 que2: chartjs.quePrompts?.que2,
                 que3: apchart.quePrompts?.que3,
-                que4: apchart.quePrompts?.que4,
+                que4: chartjs.quePrompts?.que4,
                 'over-qu': apchart.quePrompts?.['over-qu']
-    });
-
-            //initAI(titlesar[0].ai.prompts);
+            });
         })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+        .catch(error => console.error('Error fetching data:', error));
 }

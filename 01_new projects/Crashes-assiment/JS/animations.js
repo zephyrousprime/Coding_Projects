@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById('changing-title');
         if (!el) return;
         const newText = e.detail;
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:<>?~';
         const steps = 12;
         const stepDuration = 50;
         let step = 0;
