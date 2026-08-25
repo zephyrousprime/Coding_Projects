@@ -11,7 +11,7 @@
     <div class="site-header">
         <div class="site-header-nav-backdrop"></div>
         <header class="site-header-header container">
-            <div class="site-header-nav-primary-icon"></div>
+             <div class="site-header-nav-primary-icon"></div>
 
             <div class="site-header-nav-primary">
                 <nav>
@@ -36,7 +36,7 @@
                                             <div class="menu-column">
                                                 <ul class="menu-column-links">
                                                     <li>
-                                                        <a href="index.html" class="menu-column-link">Home<br> Page
+                                                        <a href="evaluation.html" class="menu-column-link"> Evaluation <br> Overview
                                                         </a>
                                                     </li>
                                                     <li>
@@ -82,7 +82,7 @@
         </div>
         <div class="que1-answer">
             <h2>Saturday is the most dangerous day to drive</h2>
-            <p>Saturday records the highest number of fatal crashes at 9,987 (18.3% of all crashes), followed by Friday at 8,973 (16.4%). Together, the weekend days account for over a third of all fatal crashes. Monday is the safest day with just 6,299 (11.5%). It can also be seen that there is a pattern of increased crashes as the week goes on, but this pattern stops on Sunday where it has fewer crashes than Saturday and Friday but not Thursday. The decrease in fatal crashes on Sunday might be attributed to reduced traffic and improved driving conditions because more people are likely to be at home or just do one small trip.</p>
+            <p>Saturday records the highest number of road deaths in the dataset at 9,987 (18.3% of all records), followed by Friday at 8,973 (16.4%). Together, these two days account for over a third of all road deaths. Monday is the lowest with just 6,299 (11.5%). There is a visible trend of increasing deaths through the week, which drops on Sunday — Sunday has fewer deaths than Saturday and Friday but not Thursday. However, the dataset alone cannot determine why Sunday is lower, as factors such as traffic volume, travel distance, speeding, alcohol use and road conditions are not directly compared in this analysis.</p>
         </div>
         <div class="ai-card" data-question="que1">
             <button class="ai-btn" aria-label="Generate AI analysis">
@@ -97,8 +97,8 @@
             <canvas id="myChart" class="chart"></canvas>
         </div>
         <div class="que2-answer">
-            <h3>The Christmas period is more dangerous than Easter</h3>
-            <p>The Christmas holiday period sees significantly more fatal crashes than Easter, likely due to the longer holiday window, increased road travel, and higher rates of impaired driving during the festive season.</p>
+            <h3>The Christmas period records more road deaths than Easter</h3>
+            <p>The Christmas period (12 days from 23 December) records 1,714 road deaths compared to Easter's 290 (5 days from the Thursday before Good Friday). When adjusted for the different period lengths, Christmas averages approximately 142.8 deaths per day while Easter averages 58.0 per day — meaning the daily rate during Christmas is roughly 2.5 times higher. However, this still does not measure individual driving risk because traffic volume and kilometres travelled during each period are not included in the dataset.</p>
         </div>
         <div class="ai-card" data-question="que2">
             <button class="ai-btn" aria-label="Generate AI analysis">
@@ -110,11 +110,18 @@
             </div>
         </div>
     </div>
+
+    <footer class="data-source-footer">
+        <div class="data-source-inner">
+            <p><strong>Data source:</strong> Australian Road Deaths Database — <a href="https://data.gov.au/data/dataset/5b530fb8-526e-4fbf-b0f6-aa24e84e4277" target="_blank" rel="noopener">data.gov.au</a></p>
+        </div>
+    </footer>
+
     <script src="https://js.puter.com/v2/"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
     <script type="module" src="script.js"></script>
-    <script src="JS/animations.js"></script>
+    <script type="module" src="JS/animations.js"></script>
 </body>
 </html>

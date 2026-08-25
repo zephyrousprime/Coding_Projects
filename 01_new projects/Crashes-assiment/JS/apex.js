@@ -1,9 +1,8 @@
-    import { mon_names, getCSSVariable, titlesar } from './titlearhome.js';
+    import { mon_names, getCSSVariable, titlesar, groupedarry } from './titlearhome.js';
 
     const cfg = titlesar[0];
 
     const chartRegistry = new Map();
-
     function createApexChart(selector, options) {
         const container = document.querySelector(selector);
         if (!container) return null;
@@ -42,25 +41,7 @@
         }
 
         #createBaseOptions() {
-            return {
-                chart: {
-                    background: 'transparent',
-                    foreColor: 'var(--chart-foreground)',
-                    fontFamily: 'var(--chart-font-family)',
-                    toolbar: { show: true },
-                    animations: { easing: 'easeinout', speed: 800 }
-                },
-                grid: { borderColor: 'var(--chart-grid)' },
-                dataLabels: { enabled: false },
-                tooltip: {
-                    theme: 'dark',
-                    style: { fontSize: '13px' },
-                    y: { formatter: value => value.toLocaleString() }
-                },
-                xaxis: {
-                    axisBorder: { color: 'var(--chart-grid)' }
-                }
-            };
+            return groupedarry[0].grouped[0];
         }
 
         Que1(processedData) {
@@ -104,8 +85,8 @@
                 title: cfg.que1[0],
                 subtitle: cfg.que1[1],
                 series: [
-                    { name: 'Fatal crashes', type: 'column', data: crashTotals },
-                    { name: 'Share of crashes (%)', type: 'line', data: sharePct }
+                    { name: 'Road deaths', type: 'column', data: crashTotals },
+                    { name: 'Share of deaths (%)', type: 'line', data: sharePct }
                 ],
                 plotOptions: cfg.que1[3],
                 stroke: cfg.que1[4],
@@ -126,7 +107,7 @@
 
             const dayLabels = categories.map((d, i) => `${d}: ${crashTotals[i]} (${sharePct[i]}%)`);
             const maxIdx = sharePct.indexOf(Math.max(...sharePct));
-            this.quePrompts.que1 = `You are analysing Australian fatal crash data. Fatal crashes by day of the week: ${dayLabels.join(', ')}. The most dangerous day is ${categories[maxIdx]} with ${sharePct[maxIdx]}% of all fatal crashes. Write a 5-6 sentence analysis explaining what the data reveals about driving danger by day of week. Be specific with numbers and do not use bolding or italics.`;
+            this.quePrompts.que1 = `You are analysing Australian road death data. Road deaths by day of the week: ${dayLabels.join(', ')}. The most dangerous day is ${categories[maxIdx]} with ${sharePct[maxIdx]}% of all road deaths. Write a 5-6 sentence analysis explaining what the data reveals about road death risk by day of week. Note that the data does not account for traffic volume or kilometres travelled, so we cannot determine individual driving risk. Be specific with numbers and do not use bolding or italics.`;
         }
 
         renderDayDetail(day, monthly) {
@@ -148,16 +129,16 @@
                     type: 'bar',
                     height: 280
                 },
-                colors: ['var(--chart-amber)'],
+                colors: cfg.renderday[0],
                 title: {
-                    text: `Fatal crashes on ${day}`,
+                    text: `Road deaths on ${day}`,
                     style: { color: 'var(--chart-foreground)', fontSize: '16px', fontWeight: 600 }
                 },
                 subtitle: {
-                    text: `${total.toLocaleString()} crashes — click a day in the chart above to change`,
+                    text: `${total.toLocaleString()} deaths — click a day in the chart above to change`,
                     style: { color: 'var(--chart-muted)', fontSize: '12px' }
                 },
-                series: [{ name: 'Fatal crashes', data: monthly }],
+                series: [{ name: 'Road deaths', data: monthly }],
                 plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } },
                 xaxis: { ...this.#createBaseOptions().xaxis, categories: mon_names },
                 tooltip: {
@@ -200,10 +181,10 @@
                             const year = years[config.dataPointIndex];
                             if (!year || !this.monthChart) return;
 
-                            this.monthChart.updateSeries([{ name: `Fatal crashes in ${year}`, data: yearMonthData[year] }], true);
+                            this.monthChart.updateSeries([{ name: `Road deaths in ${year}`, data: yearMonthData[year] }], true);
                             this.monthChart.updateOptions({
                                 subtitle: {
-                                    text: `Monthly fatal crashes in ${year}`,
+                                    text: `Monthly road deaths in ${year}`,
                                     style: { color: getCSSVariable('--chart-muted'), fontSize: '13px' }
                                 }
                             });
@@ -213,7 +194,7 @@
                 colors: cfg.que3[2],
                 title: cfg.que3[0],
                 subtitle: cfg.que3[1],
-                series: [{ name: 'Fatal crashes', data: yearTotals }],
+                series: [{ name: 'Road deaths', data: yearTotals }],
                 stroke: cfg.que3[3],
                 markers: cfg.que3[4],
                 fill: cfg.que3[5],
@@ -235,7 +216,7 @@
                             title: 'Show all years',
                             click: () => {
                                 if (!this.monthChart) return;
-                                this.monthChart.updateSeries([{ name: 'Fatal crashes (all years)', data: monthlyTotals }], true);
+                                this.monthChart.updateSeries([{ name: 'Road deaths (all years)', data: monthlyTotals }], true);
                                 this.monthChart.updateOptions({ subtitle: cfg.que3[7] });
                             }
                         }]
@@ -244,14 +225,14 @@
                 colors: cfg.que3[9],
                 title: cfg.que3[6],
                 subtitle: cfg.que3[7],
-                series: [{ name: 'Fatal crashes (all years)', data: monthlyTotals }],
+                series: [{ name: 'Road deaths (all years)', data: monthlyTotals }],
                 plotOptions: cfg.que3[8],
                 xaxis: { ...baseOptions.xaxis, categories: mon_names }
             });
 
             const yearSummary = years.map((y, i) => `${y}: ${yearTotals[i]}`).join(', ');
             const monthSummary = mon_names.map((m, i) => `${m}: ${monthlyTotals[i]}`).join(', ');
-            this.quePrompts.que3 = `You are analysing Australian fatal crash data over time. Yearly totals: ${yearSummary}. Monthly totals across all years: ${monthSummary}. The data shows whether fatalities are increasing or decreasing over time, and seasonal patterns. Write a 5-6 sentence analysis about trends and seasonal patterns. Be specific with numbers and do not use bolding or italics.`;
+            this.quePrompts.que3 = `You are analysing Australian road death data over time. Yearly totals: ${yearSummary}. Monthly totals across all years: ${monthSummary}. The data shows whether road deaths are increasing or decreasing over time, and seasonal patterns. Note that the dataset does not account for population growth or changes in traffic volume, so trends in the data may not reflect changes in actual risk. Write a 5-6 sentence analysis about trends and seasonal patterns. Be specific with numbers and do not use bolding or italics.`;
         }
 
         Que4(processedData) {
@@ -295,7 +276,7 @@
             });
 
             const roadUserSummary = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(', ');
-            this.quePrompts.que4 = `You are analysing Australian fatal crash data by road user type. The breakdown: ${roadUserSummary}. Car occupants (drivers + passengers) total ${data[0].y}, motorcycle riders ${count('Motorcycle rider')}, pedestrians ${count('Pedestrian')}, pedal cyclists ${count('Pedal cyclist')}. Write a 5-6 sentence analysis about which road users are most at risk and what this means for road safety. Be specific with numbers and do not use bolding or italics.`;
+            this.quePrompts.que4 = `You are analysing Australian road death data by road user type. The breakdown: ${roadUserSummary}. Car occupants (drivers + passengers) total ${data[0].y}, motorcycle riders ${count('Motorcycle rider')}, pedestrians ${count('Pedestrian')}, pedal cyclists ${count('Pedal cyclist')}. Note that this dataset does not include the number of people using each road type or kilometres travelled, so we cannot determine whether any road user type is disproportionately dangerous — only their share of recorded deaths. Write a 5-6 sentence analysis about which road users account for the most deaths and what this means for road safety. Be specific with numbers and do not use bolding or italics.`;
         }
 
         QueOver(processedData) {
@@ -325,10 +306,10 @@
                 colors: ['var(--chart-teal)'],
                 title: cfg.overQuChartTitle.title,
                 subtitle: {
-                    text: `${grandTotal.toLocaleString()} total fatal crashes across Australia`,
+                    text: `${grandTotal.toLocaleString()} total road deaths across Australia`,
                     style: { color: 'var(--chart-muted)', fontSize: '13px' }
                 },
-                series: [{ name: 'Fatal crashes', data: totals }],
+                series: [{ name: 'Road deaths', data: totals }],
                 plotOptions: {
                     bar: {
                         columnWidth: '55%',
@@ -344,7 +325,7 @@
                     labels: { style: { colors: 'var(--chart-muted)', fontSize: '12px' } }
                 },
                 yaxis: {
-                    title: { text: 'Fatal crashes', style: { color: 'var(--chart-muted)' } },
+                    title: { text: 'Road deaths', style: { color: 'var(--chart-muted)' } },
                     labels: { style: { colors: 'var(--chart-muted)' } }
                 },
                 dataLabels: {
@@ -377,9 +358,9 @@
                         if (item.value) popData[item.date] = item.value;
                     });
 
-                    let html = '<h3 class="pop-table-title">Fatal crashes vs population (1989–2023)</h3>';
+                    let html = '<h3 class="pop-table-title">Road deaths vs population (1989–2023)</h3>';
                     html += '<div class="pop-table-wrap"><table class="pop-table-table">';
-                    html += '<thead><tr><th>Year</th><th>Population</th><th>Fatal crashes</th><th>Rate per 100k</th></tr></thead>';
+                    html += '<thead><tr><th>Year</th><th>Population</th><th>Road deaths</th><th>Rate per 100k</th></tr></thead>';
                     html += '<tbody>';
 
                     years.forEach(year => {
@@ -401,13 +382,13 @@
 
                     const maxIdx = totals.indexOf(Math.max(...totals));
                     const minIdx = totals.indexOf(Math.min(...totals));
-                    this.quePrompts['over-qu'] = `You are analysing Australian fatal crash data (${grandTotal.toLocaleString()} records) to answer "How safe are our roads?". Fatal crashes by state: ${stateSummary}. Fatal crash rate per 100,000 population over time: ${yearRateLabels.join(', ')}. ${cfg.stateNames[categories[maxIdx]] || categories[maxIdx]} has the highest with ${Math.max(...totals).toLocaleString()} crashes, while ${cfg.stateNames[categories[minIdx]] || categories[minIdx]} has the fewest with ${Math.min(...totals).toLocaleString()}. Write a 6-8 sentence synthesis answering how safe Australian roads are, covering geographic distribution, whether the crash rate is declining relative to population growth, and who is most at risk. Be specific with numbers and conclude with actionable insights.`;
+                    this.quePrompts['over-qu'] = `You are analysing Australian road death data (${grandTotal.toLocaleString()} records) to answer "How safe are our roads?". Road deaths by state: ${stateSummary}. Road death rate per 100,000 population over time: ${yearRateLabels.join(', ')}. ${cfg.stateNames[categories[maxIdx]] || categories[maxIdx]} has the highest with ${Math.max(...totals).toLocaleString()} deaths, while ${cfg.stateNames[categories[minIdx]] || categories[minIdx]} has the fewest with ${Math.min(...totals).toLocaleString()}. Note that the dataset does not account for traffic volume, vehicle kilometres travelled, or changes in road infrastructure over time. Write a 6-8 sentence synthesis answering how safe Australian roads are, covering geographic distribution, whether the rate is declining relative to population growth, and when roads are most dangerous. Be specific with numbers and conclude with actionable insights.`;
                 })
                 .catch(() => {
                     if (tableContainer) tableContainer.innerHTML = '<p class="pop-table-loading">Population data unavailable.</p>';
                     const maxIdx = totals.indexOf(Math.max(...totals));
                     const minIdx = totals.indexOf(Math.min(...totals));
-                    this.quePrompts['over-qu'] = `You are analysing Australian fatal crash data (${grandTotal.toLocaleString()} records) to answer "How safe are our roads?". Fatal crashes by state: ${stateSummary}. ${cfg.stateNames[categories[maxIdx]] || categories[maxIdx]} has the highest with ${Math.max(...totals).toLocaleString()} crashes, while ${cfg.stateNames[categories[minIdx]] || categories[minIdx]} has the fewest with ${Math.min(...totals).toLocaleString()}. Write a 6-8 sentence synthesis answering how safe Australian roads are, covering geographic distribution, when crashes happen, whether they are declining, and who is most at risk. Be specific with numbers and conclude with actionable insights.`;
+                    this.quePrompts['over-qu'] = `You are analysing Australian road death data (${grandTotal.toLocaleString()} records) to answer "How safe are our roads?". Road deaths by state: ${stateSummary}. ${cfg.stateNames[categories[maxIdx]] || categories[maxIdx]} has the highest with ${Math.max(...totals).toLocaleString()} deaths, while ${cfg.stateNames[categories[minIdx]] || categories[minIdx]} has the fewest with ${Math.min(...totals).toLocaleString()}. Note that the dataset does not account for traffic volume or vehicle kilometres travelled. Write a 6-8 sentence synthesis answering how safe Australian roads are, covering geographic distribution, when roads are most dangerous, and which road users are most affected. Be specific with numbers and conclude with actionable insights.`;
                 });
         }
     }

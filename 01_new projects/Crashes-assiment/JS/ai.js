@@ -1,4 +1,6 @@
-export function initAI(prompts) {
+if (typeof puter !== 'undefined') puter.quiet = true;
+
+export function initAI(getPrompts) {
     document.querySelectorAll('.ai-card').forEach(card => {
         const questionId = card.dataset.question;
         const btn = card.querySelector('.ai-btn');
@@ -7,9 +9,9 @@ export function initAI(prompts) {
         if (!btn || !response || !content) return;
 
         btn.addEventListener('click', async () => {
-            const prompt = prompts[questionId];
+            const prompt = getPrompts()[questionId];
             if (!prompt) return;
-            puter.quiet = true
+
             btn.disabled = true;
             response.classList.remove('is-hidden');
             content.innerHTML = '<div class="ai-shimmer"></div>';
@@ -17,7 +19,7 @@ export function initAI(prompts) {
 
             try {
                 const stream = await puter.ai.chat(prompt, {
-                    model: 'gpt-5.4-nano',
+                    model: 'gpt-4o-mini',
                     stream: true
                 });
 

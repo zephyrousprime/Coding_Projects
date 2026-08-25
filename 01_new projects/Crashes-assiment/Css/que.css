@@ -114,3 +114,72 @@
 .pop-table-table th:nth-child(4) {
     text-align: right;
 }
+
+/* Evaluation page */
+.eval-section {
+    margin-bottom: 1.5rem;
+}
+
+.eval-card {
+    background: var(--theme-bg-secondary);
+    border: 1px solid var(--theme-lines);
+    border-radius: 14px;
+    padding: 2.4rem;
+}
+
+.eval-card h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--theme-fg);
+}
+
+.eval-card p {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: var(--theme-fg-secondary);
+    margin-bottom: 0.6rem;
+}
+
+.eval-card p:last-child {
+    margin-bottom: 0;
+}
+
+.eval-card a {
+    color: var(--chart-lime);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.eval-card a:hover {
+    color: var(--chart-teal);
+}
+
+/* Data source footer */
+.data-source-footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--theme-lines);
+}
+
+.data-source-inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+}
+
+.data-source-footer p {
+    font-size: 1.1rem;
+    color: var(--theme-fg-secondary);
+    line-height: 1.5;
+}
+
+.data-source-footer a {
+    color: var(--chart-lime);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.data-source-footer a:hover {
+    color: var(--chart-teal);
+}

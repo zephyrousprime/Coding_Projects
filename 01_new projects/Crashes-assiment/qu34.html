@@ -10,7 +10,7 @@
 <body>
     <div class="site-header">
         <div class="site-header-nav-backdrop"></div>
-        <header class="site-header-header container">
+       <header class="site-header-header container">
              <div class="site-header-nav-primary-icon"></div>
 
             <div class="site-header-nav-primary">
@@ -36,7 +36,7 @@
                                             <div class="menu-column">
                                                 <ul class="menu-column-links">
                                                     <li>
-                                                        <a href="index.html" class="menu-column-link">Home<br> Page
+                                                        <a href="evaluation.html" class="menu-column-link"> Evaluation <br> Overview
                                                         </a>
                                                     </li>
                                                     <li>
@@ -77,8 +77,8 @@
     <div id="que3-year" class="apex-chart"></div>
     <div id="que3-month" class="apex-chart"></div>
     <div class="que3-answer">
-        <h2>Fatalities show a seasonal pattern but limited long-term decline</h2>
-        <p>Fatal crashes peak during the summer months (December and January), consistent with increased holiday travel. While there is some year-to-year variation, the data does not show a strong consistent downward trend over the period analysed.</p>
+        <h2>Australian road deaths by year (1989–2023)</h2>
+        <p>Road deaths peak during the summer months (December and January), consistent with increased holiday travel. While there is some year-to-year variation, the data does not show a strong consistent downward trend over the period analysed. Click a year in the chart above to see its monthly distribution.</p>
     </div>
     <div class="ai-card" data-question="que3">
         <button class="ai-btn" aria-label="Generate AI analysis">
@@ -91,8 +91,8 @@
     </div>
     <div id="que4-chart" class="apex-chart"></div>
     <div class="que4-answer">
-        <h2>Motorcycle riders face disproportionate risk</h2>
-        <p>While car occupants make up the largest total number of fatal crashes, motorcycle riders are severely overrepresented relative to their road usage. Pedestrians and pedal cyclists also account for a notable share, highlighting the vulnerability of non-motorised road users.</p>
+        <h2>Should I ride a motorbike?</h2>
+        <p>The data shows that motorcycle riders account for a significant number of road deaths, but this dataset alone cannot determine how dangerous motorcycle riding is compared with other forms of transport because it does not measure exposure such as kilometres travelled or number of trips. Car occupants (drivers and passengers) make up the largest total number of road deaths in absolute terms. Pedestrians and pedal cyclists also account for a notable share, highlighting the vulnerability of non-motorised road users. The data provides evidence of risk but is not sufficient on its own to determine whether someone should ride a motorbike.</p>
     </div>
     <div class="ai-card" data-question="que4">
         <button class="ai-btn" aria-label="Generate AI analysis">
@@ -104,11 +104,17 @@
         </div>
     </div>
 
+    <footer class="data-source-footer">
+        <div class="data-source-inner">
+            <p><strong>Data source:</strong> Australian Road Deaths Database — <a href="https://data.gov.au/data/dataset/5b530fb8-526e-4fbf-b0f6-aa24e84e4277" target="_blank" rel="noopener">data.gov.au</a></p>
+        </div>
+    </footer>
+
     <script src="https://js.puter.com/v2/"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
     <script type="module" src="script.js"></script>
-    <script src="JS/animations.js"></script>
+    <script type="module" src="JS/animations.js"></script>
 </body>
 </html>

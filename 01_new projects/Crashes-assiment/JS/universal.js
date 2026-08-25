@@ -28,13 +28,13 @@ export function fetchData(htmlFile) {
                 default:
                     console.error('Unknown HTML file:', htmlFile);
             }
-            initAI({
+            initAI(() => ({
                 que1: apchart.quePrompts?.que1,
                 que2: chartjs.quePrompts?.que2,
                 que3: apchart.quePrompts?.que3,
-                que4: chartjs.quePrompts?.que4,
+                que4: apchart.quePrompts?.que4,
                 'over-qu': apchart.quePrompts?.['over-qu']
-            });
+            }));
         })
         .catch(error => console.error('Error fetching data:', error));
 }

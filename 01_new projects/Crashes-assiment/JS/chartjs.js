@@ -29,7 +29,7 @@ export class ChartJS {
             ? (this.drilledLabel === 'Christmas' ? this.christmasMonths : this.easterMonths)
             : [this.christmasCount, this.easterCount];
         const title = this.drilled
-            ? { ...cfg.que2[1], text: `Fatal crashes during the ${this.drilledLabel} period, by month` }
+            ? { ...cfg.que2[1], text: `Road deaths during the ${this.drilledLabel} period, by month` }
             : cfg.que2[1];
         const subtitle = this.drilled
             ? { display: true, text: 'Click a slice to return to Christmas vs Easter', color: getCSSVariable('--chart-muted'), font: { size: 13 } }
@@ -76,7 +76,7 @@ export class ChartJS {
                         this.drilledLabel = label;
                         chart.data.labels = mon_names;
                         chart.data.datasets[0].data = label === 'Christmas' ? this.christmasMonths : this.easterMonths;
-                        chart.options.plugins.title = { ...cfg.que2[1], text: `Fatal crashes during the ${label} period, by month` };
+                        chart.options.plugins.title = { ...cfg.que2[1], text: `Road deaths during the ${label} period, by month` };
                         chart.options.plugins.subtitle = { display: true, text: 'Click a slice to return to Christmas vs Easter', color: getCSSVariable('--chart-muted'), font: { size: 13 } };
                         chart.update();
                     }
@@ -103,7 +103,7 @@ export class ChartJS {
         const easterMonthly = mon_names.map((m, i) =>
             this.easterMonths[i] ? `${m} ${this.easterMonths[i]}` : '').filter(Boolean).join(', ');
 
-        this.quePrompts.que2 = `You are analysing Australian fatal crash data comparing Christmas and Easter holiday periods. The Christmas period has ${this.christmasCount.toLocaleString()} fatal crashes while Easter has ${this.easterCount.toLocaleString()} — Christmas has ${((this.christmasCount / this.easterCount) * 100 - 100).toFixed(0)}% more. Monthly breakdown — Christmas: ${christmasMonthly}. Easter: ${easterMonthly}. Write a 5-6 sentence analysis comparing the two holiday periods, explaining why Christmas is more dangerous and what the monthly patterns reveal. Be specific with numbers and do not use bolding or italics.`;
+        this.quePrompts.que2 = `You are analysing Australian road death data comparing Christmas and Easter holiday periods. The Christmas period (12 days from 23 December) has ${this.christmasCount.toLocaleString()} road deaths while Easter (5 days from the Thursday before Good Friday) has ${this.easterCount.toLocaleString()} — Christmas has ${((this.christmasCount / this.easterCount) * 100 - 100).toFixed(0)}% more. When adjusted for the different period lengths, Christmas averages approximately ${(this.christmasCount / 12).toFixed(1)} deaths per day while Easter averages ${(this.easterCount / 5).toFixed(1)} per day. Monthly breakdown — Christmas: ${christmasMonthly}. Easter: ${easterMonthly}. Note that this comparison does not account for traffic volume or kilometres travelled during each period. Write a 5-6 sentence analysis comparing the two holiday periods, explaining what the data reveals and what its limitations are. Be specific with numbers and do not use bolding or italics.`;
     }
 
     refresh() {

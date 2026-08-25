@@ -31,11 +31,6 @@
     margin: 0 auto;
 }
 
-/* Centered overarching card below */
-.home-overarching {
-    max-width: 900px;
-    margin: 1.5rem auto 0;
-}
 
 /* Glass-card question tiles */
 .multiple-choice {
@@ -66,6 +61,6 @@
 }
 
 /* Overarching card is a bit taller */
-.home-overarching .multiple-choice {
+.multiple-choice {
     text-align: center;
 }
