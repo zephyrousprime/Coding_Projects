@@ -5,13 +5,15 @@ const cards = document.querySelectorAll('.multiple-choice');
 cards.forEach(card => {
     card.addEventListener('click', () => {
         const page = card.dataset.page;
+        const anchor = card.dataset.anchor;
         const title = card.dataset.title;
         if (!page || !title) return;
 
-        linkEl.href = page;
+        const target = anchor ? `${page}#${anchor}` : page;
+        linkEl.href = target;
 
         if (titleEl.textContent === title) {
-            window.location.href = page;
+            window.location.href = target;
             return;
         }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overarching Questions</title>
     <link rel="icon" type="image/x-icon" href="Icon/over-qu.svg">
+    <link rel="preload" href="./Data/Fatal Crashes.json" as="fetch" crossorigin>
 </head>
 <body>
     <div class="site-header">
@@ -75,22 +76,22 @@
     </div>
 
     <div class="ques">
-        <div class="over-qu-answer">
+        <div id="over-qu" class="over-qu-answer">
             <h1>How safe are our roads?</h1>
         </div>
 
         <div class="que1-answer">
             <h2>Overall safety</h2>
-            <p>With 54,641 road deaths recorded across Australia in this dataset, the analysis reveals clear patterns in when and where road trauma occurs. The data shows that road deaths are not evenly distributed — they vary by day of week, time of year, holiday period, road user type, and state. While the total number of deaths is substantial, the dataset alone does not provide enough context to determine whether Australian roads are becoming safer or more dangerous over time, as it does not account for changes in population, traffic volume, or vehicle kilometres travelled.</p>
+            <p>With 54,641 road deaths recorded across Australia in this dataset, the analysis reveals clear patterns in when and where road trauma occurs. The data shows that road deaths are not evenly distributed, they vary by day of week, time of year, holiday period, road user type, and state. While the total number of deaths is substantial, the dataset alone does not provide enough context to determine whether Australian roads are becoming safer or more dangerous over time, as it does not account for changes in population, traffic volume, or vehicle kilometres travelled.</p>
             <br>
             <h2>When are roads most dangerous?</h2>
-            <p>Saturday is the deadliest day, accounting for 9,987 road deaths (18.3% of the total), and when combined with Friday's 8,973 (16.4%), the two days alone make up over a third of all road deaths. Monday is the lowest with just 6,299 (11.5%). Risk also increases during holiday periods — the Christmas period (12 days) records significantly more road deaths than Easter (5 days), both in total and when adjusted for the different period lengths. Seasonal trends reinforce this pattern, as road deaths peak in December and January during the Australian summer when more people are on the roads. Despite improvements in vehicle safety and road infrastructure, there is no strong long-term decline in road deaths across the years in this dataset, suggesting that other factors may be offsetting those gains.</p>
+            <p>Saturday is the deadliest day, accounting for 9,987 road deaths (18.3% of the total), and when combined with Friday's 8,973 (16.4%), the two days alone make up over a third of all road deaths. Monday is the lowest with just 6,299 (11.5%). Risk also increases during holiday periods, the Christmas period (12 days) records significantly more road deaths than Easter (5 days), both in total and when adjusted for the different period lengths. Seasonal trends reinforce this pattern, as road deaths peak in December and January during the Australian summer when more people are on the roads. Despite improvements in vehicle safety and road infrastructure, there is no strong long-term decline in road deaths across the years in this dataset, suggesting that other factors may be offsetting those gains.</p>
             <br>
             <h2>What about motorcycles?</h2>
-            <p>Motorcycle riders account for a significant proportion of road deaths, as shown in the Question 4 sunburst chart. However, the dataset does not provide information about the number of motorcycle riders, kilometres travelled, or trip frequency. Therefore, we cannot conclude that motorcycle riding is disproportionately dangerous relative to other road uses — we can only observe that motorcycle riders represent a notable share of road deaths. Pedestrians and pedal cyclists also account for a notable share, reminding us that road safety must extend beyond drivers to protect the most vulnerable users.</p>
+            <p>Motorcycle riders account for a significant proportion of road deaths, as shown in the Question 4 sunburst chart. However, the dataset does not provide information about the number of motorcycle riders, kilometres travelled, or trip frequency. Therefore, we cannot conclude that motorcycle riding is disproportionately dangerous relative to other road uses, we can only observe that motorcycle riders represent a notable share of road deaths. Pedestrians and pedal cyclists also account for a notable share, reminding us that road safety must extend beyond drivers to protect the most vulnerable users.</p>
             <br>
             <h2>Geographic distribution</h2>
-            <p>As the chart below shows, the burden is not shared equally across the country — certain states carry a far heavier toll, and it is in those regions where targeted enforcement, infrastructure investment, and public education could save the most lives.</p>
+            <p>As the chart below shows, the burden is not shared equally across the country, certain states carry a far heavier toll, and it is in those regions where targeted enforcement, infrastructure investment, and public education could save the most lives.</p>
         </div>
 
         <div class="ai-card" data-question="over-qu">

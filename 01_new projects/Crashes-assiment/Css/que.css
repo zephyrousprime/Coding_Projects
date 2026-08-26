@@ -26,11 +26,11 @@
 .que2-answer h2,
 .que3-answer h2,
 .que4-answer h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
 }
 
 .que2-answer h3 {
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 /* Overarching answer */
@@ -128,14 +128,14 @@
 }
 
 .eval-card h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
     color: var(--theme-fg);
 }
 
 .eval-card p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     line-height: 1.65;
     color: var(--theme-fg-secondary);
     margin-bottom: 0.6rem;

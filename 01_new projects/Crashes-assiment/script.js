@@ -10,6 +10,16 @@ import { titlesar } from './JS/titlearhome.js';
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
 
+function scrollToHash() {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('nav div div div div div ul li a');
@@ -26,13 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     switch (currentPage) {
         case 'qu12.html':
-            fetchData('qu12.html');
+            fetchData('qu12.html').then(scrollToHash);
             break;
         case 'qu34.html':
-            fetchData('qu34.html');
+            fetchData('qu34.html').then(scrollToHash);
             break;
         case 'over-qu.html':
-            fetchData('over-qu.html');
+            fetchData('over-qu.html').then(scrollToHash);
             break;
     }
 

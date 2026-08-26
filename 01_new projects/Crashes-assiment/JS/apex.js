@@ -67,7 +67,7 @@
                 monthByDay[day][month - 1]++;
             });
 
-            createApexChart('#que1-chart', {
+            createApexChart('#que1', {
                 ...this.#createBaseOptions(),
                 chart: {
                     ...this.#createBaseOptions().chart,
@@ -156,11 +156,8 @@
             processedData.forEach(record => {
                 const year = record['Year'];
                 const month = record['Month'];
-
                 if (!year || !month) return;
-
                 if (!yearMonthData[year]) yearMonthData[year] = new Array(12).fill(0);
-
                 yearMonthData[year][month - 1]++;
                 monthlyTotals[month - 1]++;
             });
@@ -169,7 +166,7 @@
             const yearTotals = years.map(year => yearMonthData[year].reduce((a, b) => a + b, 0));
             const baseOptions = this.#createBaseOptions();
 
-            createApexChart('#que3-year', {
+            createApexChart('#que3', {
                 ...baseOptions,
                 chart: {
                     ...baseOptions.chart,
@@ -253,7 +250,7 @@
             data[0].y = count('Driver') + count('Passenger');
             data[2].y = count('Pedestrian') + count('Pedal cyclist');
 
-            createApexChart('#que4-chart', {
+            createApexChart('#que4', {
                 ...this.#createBaseOptions(),
                 chart: {
                     ...this.#createBaseOptions().chart,
@@ -307,32 +304,22 @@
                 title: cfg.overQuChartTitle.title,
                 subtitle: {
                     text: `${grandTotal.toLocaleString()} total road deaths across Australia`,
-                    style: { color: 'var(--chart-muted)', fontSize: '13px' }
+                    style: cfg.overQuAnswer[2]
                 },
                 series: [{ name: 'Road deaths', data: totals }],
-                plotOptions: {
-                    bar: {
-                        columnWidth: '55%',
-                        borderRadius: 6,
-                        dataLabels: { position: 'top' }
-                    }
-                },
+                plotOptions: cfg.overQuAnswer[3],
                 stroke: { width: 0 },
                 markers: { size: 0 },
                 xaxis: {
                     categories: labels,
                     ...this.#createBaseOptions().xaxis,
-                    labels: { style: { colors: 'var(--chart-muted)', fontSize: '12px' } }
+                    labels: cfg.overQuAnswer[4]
                 },
-                yaxis: {
-                    title: { text: 'Road deaths', style: { color: 'var(--chart-muted)' } },
-                    labels: { style: { colors: 'var(--chart-muted)' } }
-                },
+                yaxis: cfg.overQuAnswer[5],
                 dataLabels: {
                     enabled: true,
                     formatter: val => val.toLocaleString(),
-                    style: { fontSize: '12px', colors: ['var(--chart-foreground)'] },
-                    offsetY: -20
+                    style: cfg.overQuAnswer[6]
                 },
                 tooltip: {
                     theme: 'dark',

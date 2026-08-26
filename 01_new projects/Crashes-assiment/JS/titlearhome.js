@@ -77,7 +77,6 @@ export const titlesar = [{
             markers: { size: 8 }
         }
     ],
-
     renderday: [
         ['var(--chart-amber)'],
         { bar: { columnWidth: '55%', borderRadius: 6 } },
@@ -120,8 +119,6 @@ export const titlesar = [{
         },
         [getCSSVariable('--chart-lime'), getCSSVariable('--chart-coral')]
     ],
-
-
     que3: [
         {
             text: 'Are road deaths reducing over time?',
@@ -155,8 +152,6 @@ export const titlesar = [{
         { bar: { columnWidth: '55%', borderRadius: 6 } },
         ['var(--chart-violet)']
     ],
-
-
     que4: [
         ['var(--chart-amber)', 'var(--chart-teal)', 'var(--chart-coral)'],
         {
@@ -186,11 +181,36 @@ export const titlesar = [{
     ],
 
 
-    overQuAnswer: {
-        title: "How safe are our roads?",
+    overQuAnswer: [
+        [
+        "How safe are our roads?"
+        ],
+        {
         text: "With 54,641 road deaths recorded across Australia, the analysis reveals clear patterns in when and where road trauma occurs. Road deaths vary by day of week, time of year, holiday period, road user type, and state. Saturday is the deadliest day, and when combined with Friday, the two days alone make up over a third of all road deaths. Risk also increases during holiday periods, with the Christmas period recording significantly more road deaths than Easter. Seasonal trends reinforce this, as road deaths peak in December and January. Despite improvements in vehicle safety and road infrastructure, there is no strong long-term decline in road deaths. The dataset alone does not provide enough context to determine whether Australian roads are becoming safer or more dangerous over time. Motorcycle riders account for a significant proportion of road deaths, but the dataset does not provide information about the number of motorcycle riders, kilometres travelled, or trip frequency — therefore, we cannot conclude that motorcycle riding is disproportionately dangerous relative to other road uses. Certain states carry a far heavier toll, and it is in those regions where targeted enforcement, infrastructure investment, and public education could save the most lives."
     },
+    {
+        color: 'var(--chart-muted)', fontSize: '13px' 
+    },
+    {
+        bar: {
+           columnWidth: '55%',
+            borderRadius: 6,
+           dataLabels: { position: 'top' }
+     }
+    },
+    {
+        labels: { style: { colors: 'var(--chart-muted)', fontSize: '12px' } }
+    },
+    {
+         title: { text: 'Road deaths', style: { color: 'var(--chart-muted)' } },
+                    labels: { style: { colors: 'var(--chart-muted)' } }
+    },
+    {
+        style: { fontSize: '12px', colors: ['var(--chart-foreground)'] },
+                    offsetY: -20
+    }
 
+],
     overQuChartTitle: {
         title: { text: 'Road deaths by state and territory', style: { color: getCSSVariable('--chart-foreground'), fontSize: '18px', fontWeight: 600 } }
     },

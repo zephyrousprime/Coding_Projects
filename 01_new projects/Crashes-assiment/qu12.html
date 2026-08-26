@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions 1 &amp; 2 - Crash Analysis</title>
     <link rel="icon" type="image/x-icon" href="Icon/qu12.svg">
+    <link rel="preload" href="./Data/Fatal Crashes.json" as="fetch" crossorigin>
 </head>
 <body>
     <div class="site-header">
@@ -75,7 +76,7 @@
     </div>
 
     <div class="ques">
-        <div id="que1-chart" class="apex-chart"></div>
+        <div id="que1" class="apex-chart"></div>
         <div id="que1-detail-wrap" class="is-hidden">
             <div id="que1-detail" class="apex-chart"></div>
             <button id="que1-detail-close" class="detail-close" aria-label="Close day breakdown">×</button>
@@ -93,7 +94,7 @@
                 <div class="ai-response-content"></div>
             </div>
         </div>
-        <div class="chart-box">
+        <div id="que2" class="chart-box">
             <canvas id="myChart" class="chart"></canvas>
         </div>
         <div class="que2-answer">

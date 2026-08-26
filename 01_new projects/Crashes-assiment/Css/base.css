@@ -17,6 +17,7 @@
     --theme-lines: rgba(255, 255, 255, 0.12);
     --nav-height: 4.8rem;
     --container-padding: 4.8rem;
+    --scroll-offset: 8rem;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --font-family:  monospace;
 }
@@ -43,6 +44,10 @@ body { background: var(--theme-bg); color: var(--theme-fg); }
     max-width: 1920px;
     margin: 0 auto;
     padding-inline: var(--container-padding);
+}
+
+[id] {
+    scroll-margin-top: var(--scroll-offset);
 }
 
 /* Light theme */

@@ -6,7 +6,7 @@ import { initAI } from './ai.js';
 export { mon_names, getCSSVariable };
 
 export function fetchData(htmlFile) {
-    fetch('./Data/Fatal Crashes.json')
+    return fetch('./Data/Fatal Crashes.json')
         .then(response => response.json())
         .then(data => {
             const apchart = new ApexCharts();
