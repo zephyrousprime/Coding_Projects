@@ -16,7 +16,7 @@
 }
 
 [class*="-answer"] p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     line-height: 1.65;
     color: var(--theme-fg-secondary);
 }

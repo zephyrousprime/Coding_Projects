@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shows</title>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../movies/index.html">Movies</a>
+        <span id="user-info"></span>
+        <a href="logout.php">Log out</a>
+    </nav>
+
+    <h1>Shows</h1>
+
+    <section id="add-form">
+        <h2>Add Show</h2>
+        <form action="insert.php" method="post">
+            <label>Title * <input type="text" name="title" id="title_input" required></label>
+            <label>Year <input type="number" name="year" id="year_input"></label>
+            <label>Genre <input type="text" name="genre" id="genre_input"></label>
+            <label>Reason <input type="text" name="reason" id="reason_input"></label>
+            <label>Notes <textarea name="notes" id="notes_input"></textarea></label>
+            <label>Link <input type="url" name="link" id="link_input"></label>
+            <label>Rating (1-10) <input type="number" name="rating" id="rating_input" min="1" max="10"></label>
+            <label><input type="checkbox" name="watched" value="1"> Already watched</label>
+
+            <button type="submit">Add</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>To Watch</h2>
+        <div id="to-watch"></div>
+    </section>
+
+    <section>
+        <h2>Watched</h2>
+        <div id="watched"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
