@@ -20,30 +20,6 @@ This is not a monorepo — there is no root `package.json` or shared build syste
 | `index.html` | Static hub page that links into the projects in `01_new projects/` |
 | `sever.js` | Local Express server — **not yet working**; the `/api/projects` endpoint still needs work |
 
-## Getting started
-
-### Hub page
-
-Open `index.html` in a browser to browse the collection of mini-projects.
-
-### Express server
-
-```bash
-node sever.js
-```
-
-Note: the server currently only serves static files from `public/`. The `/api/projects` endpoint is **not yet working** and will be fixed.
-
-### User Experience site
-
-```bash
-cd "03_User Experiece"
-npm install
-npm run serve    # http://localhost:8000
-npm test         # Jest suite
-npm run lint     # ESLint
-```
-
 ## Adding a new project
 
 - Copy the template files (`index.html`, `style.css`, `script.js`) from the root of `01_new projects/` into a new subfolder, or
